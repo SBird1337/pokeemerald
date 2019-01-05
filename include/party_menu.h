@@ -41,6 +41,8 @@ struct Struct203CEC8
     s16 unk10;
 };
 
+#define TMHM_COUNT 58
+
 extern struct Struct203CEC8 gUnknown_0203CEC8;
 extern u8 gUnknown_0203CEE8;
 extern u8 gUnknown_0203CEE9;
@@ -49,6 +51,7 @@ extern u8 gSelectedOrderFromParty[4];
 extern u8 gUnknown_0203CF00[3];
 
 extern const u16 gTutorMoves[];
+extern const u16 gTMHMMoves[TMHM_COUNT];
 
 void sub_81B0FCC(u8 slot, u8 b);
 bool8 IsMultiBattle(void);

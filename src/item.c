@@ -1,5 +1,6 @@
 #include "global.h"
 #include "item.h"
+#include "party_menu.h"
 #include "berry.h"
 #include "string_util.h"
 #include "text.h"
@@ -20,9 +21,11 @@ extern u16 gUnknown_0203CF30[];
 // this file's functions
 static bool8 CheckPyramidBagHasItem(u16 itemId, u16 count);
 static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count);
+static void DeserializeTmHmItemSlots(void);
 
 // EWRAM variables
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
+EWRAM_DATA struct ItemSlot gTmHmItemSlots[BAG_TMHM_COUNT] = {0};
 
 // rodata
 #include "data/text/item_descriptions.h"
@@ -64,6 +67,17 @@ void ApplyNewEncryptionKeyToBagItems_(u32 newKey) // really GF?
     ApplyNewEncryptionKeyToBagItems(newKey);
 }
 
+static void DeserializeTmHmItemSlots(void)
+{
+    int i;
+
+    for(i = 0; i < TMHM_COUNT; ++i)
+    {
+        if(gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[i / 8] % 8)
+            AddBagItem(i + ITEM_TM01, 1);
+    }
+}
+
 void SetBagItemsPointers(void)
 {
     gBagPockets[ITEMS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Items;
@@ -75,8 +89,9 @@ void SetBagItemsPointers(void)
     gBagPockets[BALLS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_PokeBalls;
     gBagPockets[BALLS_POCKET].capacity = BAG_POKEBALLS_COUNT;
 
-    gBagPockets[TMHM_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_TMHM;
+    gBagPockets[TMHM_POCKET].itemSlots = &gTmHmItemSlots[0];
     gBagPockets[TMHM_POCKET].capacity = BAG_TMHM_COUNT;
+    DeserializeTmHmItemSlots();
 
     gBagPockets[BERRIES_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Berries;
     gBagPockets[BERRIES_POCKET].capacity = BAG_BERRIES_COUNT;
@@ -393,6 +408,11 @@ _080D6916:\n\
 }
 #endif // NONMATCHING
 
+static void SetTmHmOwned(u16 itemId)
+{
+
+}
+
 bool8 AddBagItem(u16 itemId, u16 count)
 {
     u8 i;
@@ -417,10 +437,18 @@ bool8 AddBagItem(u16 itemId, u16 count)
         newItems = AllocZeroed(itemPocket->capacity * sizeof(struct ItemSlot));
         memcpy(newItems, itemPocket->itemSlots, itemPocket->capacity * sizeof(struct ItemSlot));
 
-        if (pocket != BERRIES_POCKET)
-            slotCapacity = 99;
-        else
-            slotCapacity = 999;
+        switch(pocket)
+        {
+            case BERRIES_POCKET:
+                slotCapacity = 999;
+            break;
+            case TMHM_POCKET:
+                slotCapacity = 1;
+            break;
+            default:
+                slotCapacity = 99;
+            break;
+        }
 
         for (i = 0; i < itemPocket->capacity; i++)
         {
@@ -486,6 +514,8 @@ bool8 AddBagItem(u16 itemId, u16 count)
                     {
                         // created a new slot and added quantity
                         SetBagItemQuantity(&newItems[i].quantity, count);
+                        if(pocket == TMHM_POCKET)
+                            SetTmHmOwned(itemId);
                         goto SUCCESS_ADD_ITEM;
                     }
                 }
