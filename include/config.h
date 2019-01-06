@@ -26,6 +26,4 @@
 #define UNITS_METRIC
 #endif
 
-#define NONMATCHING
-
 #endif // GUARD_CONFIG_H

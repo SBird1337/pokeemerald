@@ -1193,4 +1193,10 @@ SECTIONS {
     {
         src/graphics.o(.rodata);
     } =0
+
+    /* Discard everything not specifically mentioned above. */
+    /DISCARD/ :
+    {
+        *(*);
+    }
 }

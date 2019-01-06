@@ -6,7 +6,6 @@
 #include "save.h"
 #include "new_game.h"
 #include "overworld.h"
-#include "item.h"
 #include "alloc.h"
 
 void sub_81700F8(void)
@@ -20,7 +19,6 @@ void sub_81700F8(void)
     REG_IME = imeBackup;
     gMain.inBattle = FALSE;
     SetSaveBlocksPointers(sub_815355C());
-    DeserializeTmHmItemSlots();
     sub_808447C();
     Save_ResetSaveCounters();
     Save_LoadGameData(0);

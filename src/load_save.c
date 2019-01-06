@@ -123,7 +123,7 @@ void MoveSaveBlocks_ResetHeap(void)
     *gSaveBlock2Ptr = *saveBlock2Copy;
     *gSaveBlock1Ptr = *saveBlock1Copy;
     *gPokemonStoragePtr = *pokemonStorageCopy;
-    DeserializeTmHmItemSlots();
+
     // heap was destroyed in the copying process, so reset it
     InitHeap(gHeap, HEAP_SIZE);
 
