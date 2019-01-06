@@ -36,11 +36,11 @@ MID_BUILDDIR = $(OBJ_DIR)/$(MID_SUBDIR)
 ASFLAGS := -mcpu=arm7tdmi
 
 CC1             := tools/agbcc/bin/agbcc$(EXE)
-override CFLAGS += -mthumb-interwork -Wimplicit -Wparentheses -Werror -O2 -fhex-asm
+override CFLAGS += -g -mthumb-interwork -Wimplicit -Wparentheses -Werror -O2 -fhex-asm
 
 CPPFLAGS := -I tools/agbcc/include -I tools/agbcc -iquote include
 
-LDFLAGS = -Map ../../$(MAP)
+LDFLAGS = -g --no-strip-discarded -Map ../../$(MAP)
 
 LIB := -L ../../tools/agbcc/lib -lgcc -lc
 

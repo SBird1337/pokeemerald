@@ -26,6 +26,7 @@
 #include "title_screen.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
+#include "item.h"
 
 extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
 extern const struct CompressedSpritePalette gBattleAnimPaletteTable[];
@@ -1006,6 +1007,7 @@ void CB2_InitCopyrightScreenAfterBootup(void)
     if (!SetUpCopyrightScreen())
     {
         SetSaveBlocksPointers(sub_815355C());
+        DeserializeTmHmItemSlots();
         sub_808447C();
         Save_ResetSaveCounters();
         Save_LoadGameData(SAVE_NORMAL);
