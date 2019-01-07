@@ -5227,10 +5227,10 @@ const struct Item gItems[] =
 
 // TMs/HMs
 
-    [ITEM_TM01_FOCUS_PUNCH] =
+    [ITEM_TM01_WORK_UP] = 
     {
         .name = _("TM01"),
-        .itemId = ITEM_TM01_FOCUS_PUNCH,
+        .itemId = ITEM_TM01_WORK_UP,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5245,7 +5245,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM02_DRAGON_CLAW] =
+    [ITEM_TM02_DRAGON_CLAW] = 
     {
         .name = _("TM02"),
         .itemId = ITEM_TM02_DRAGON_CLAW,
@@ -5263,10 +5263,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM03_WATER_PULSE] =
+    [ITEM_TM03_PSYSHOCK] = 
     {
         .name = _("TM03"),
-        .itemId = ITEM_TM03_WATER_PULSE,
+        .itemId = ITEM_TM03_PSYSHOCK,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5281,7 +5281,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM04_CALM_MIND] =
+    [ITEM_TM04_CALM_MIND] = 
     {
         .name = _("TM04"),
         .itemId = ITEM_TM04_CALM_MIND,
@@ -5299,11 +5299,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM05_ROAR] =
+    [ITEM_TM05_ROAR] = 
     {
         .name = _("TM05"),
         .itemId = ITEM_TM05_ROAR,
-        .price = 1000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM05ItemDescription,
@@ -5317,7 +5317,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM06_TOXIC] =
+    [ITEM_TM06_TOXIC] = 
     {
         .name = _("TM06"),
         .itemId = ITEM_TM06_TOXIC,
@@ -5335,7 +5335,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM07_HAIL] =
+    [ITEM_TM07_HAIL] = 
     {
         .name = _("TM07"),
         .itemId = ITEM_TM07_HAIL,
@@ -5353,7 +5353,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM08_BULK_UP] =
+    [ITEM_TM08_BULK_UP] = 
     {
         .name = _("TM08"),
         .itemId = ITEM_TM08_BULK_UP,
@@ -5371,10 +5371,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM09_BULLET_SEED] =
+    [ITEM_TM09_VENOSHOCK] = 
     {
         .name = _("TM09"),
-        .itemId = ITEM_TM09_BULLET_SEED,
+        .itemId = ITEM_TM09_VENOSHOCK,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5389,7 +5389,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM10_HIDDEN_POWER] =
+    [ITEM_TM10_HIDDEN_POWER] = 
     {
         .name = _("TM10"),
         .itemId = ITEM_TM10_HIDDEN_POWER,
@@ -5407,11 +5407,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM11_SUNNY_DAY] =
+    [ITEM_TM11_SUNNY_DAY] = 
     {
         .name = _("TM11"),
         .itemId = ITEM_TM11_SUNNY_DAY,
-        .price = 2000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM11ItemDescription,
@@ -5425,7 +5425,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM12_TAUNT] =
+    [ITEM_TM12_TAUNT] = 
     {
         .name = _("TM12"),
         .itemId = ITEM_TM12_TAUNT,
@@ -5443,7 +5443,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM13_ICE_BEAM] =
+    [ITEM_TM13_ICE_BEAM] = 
     {
         .name = _("TM13"),
         .itemId = ITEM_TM13_ICE_BEAM,
@@ -5461,11 +5461,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM14_BLIZZARD] =
+    [ITEM_TM14_BLIZZARD] = 
     {
         .name = _("TM14"),
         .itemId = ITEM_TM14_BLIZZARD,
-        .price = 5500,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM14ItemDescription,
@@ -5479,11 +5479,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM15_HYPER_BEAM] =
+    [ITEM_TM15_HYPER_BEAM] = 
     {
         .name = _("TM15"),
         .itemId = ITEM_TM15_HYPER_BEAM,
-        .price = 7500,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM15ItemDescription,
@@ -5497,7 +5497,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM16_LIGHT_SCREEN] =
+    [ITEM_TM16_LIGHT_SCREEN] = 
     {
         .name = _("TM16"),
         .itemId = ITEM_TM16_LIGHT_SCREEN,
@@ -5515,7 +5515,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM17_PROTECT] =
+    [ITEM_TM17_PROTECT] = 
     {
         .name = _("TM17"),
         .itemId = ITEM_TM17_PROTECT,
@@ -5533,11 +5533,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM18_RAIN_DANCE] =
+    [ITEM_TM18_RAIN_DANCE] = 
     {
         .name = _("TM18"),
         .itemId = ITEM_TM18_RAIN_DANCE,
-        .price = 2000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM18ItemDescription,
@@ -5551,10 +5551,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM19_GIGA_DRAIN] =
+    [ITEM_TM19_ROOST] = 
     {
         .name = _("TM19"),
-        .itemId = ITEM_TM19_GIGA_DRAIN,
+        .itemId = ITEM_TM19_ROOST,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5569,7 +5569,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM20_SAFEGUARD] =
+    [ITEM_TM20_SAFEGUARD] = 
     {
         .name = _("TM20"),
         .itemId = ITEM_TM20_SAFEGUARD,
@@ -5587,11 +5587,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM21_FRUSTRATION] =
+    [ITEM_TM21_FRUSTRATION] = 
     {
         .name = _("TM21"),
         .itemId = ITEM_TM21_FRUSTRATION,
-        .price = 1000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM21ItemDescription,
@@ -5605,10 +5605,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM22_SOLARBEAM] =
+    [ITEM_TM22_SOLAR_BEAM] = 
     {
         .name = _("TM22"),
-        .itemId = ITEM_TM22_SOLARBEAM,
+        .itemId = ITEM_TM22_SOLAR_BEAM,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5623,10 +5623,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM23_IRON_TAIL] =
+    [ITEM_TM23_SMACK_DOWN] = 
     {
         .name = _("TM23"),
-        .itemId = ITEM_TM23_IRON_TAIL,
+        .itemId = ITEM_TM23_SMACK_DOWN,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5641,7 +5641,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM24_THUNDERBOLT] =
+    [ITEM_TM24_THUNDERBOLT] = 
     {
         .name = _("TM24"),
         .itemId = ITEM_TM24_THUNDERBOLT,
@@ -5659,11 +5659,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM25_THUNDER] =
+    [ITEM_TM25_THUNDER] = 
     {
         .name = _("TM25"),
         .itemId = ITEM_TM25_THUNDER,
-        .price = 5500,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM25ItemDescription,
@@ -5677,7 +5677,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM26_EARTHQUAKE] =
+    [ITEM_TM26_EARTHQUAKE] = 
     {
         .name = _("TM26"),
         .itemId = ITEM_TM26_EARTHQUAKE,
@@ -5695,11 +5695,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM27_RETURN] =
+    [ITEM_TM27_RETURN] = 
     {
         .name = _("TM27"),
         .itemId = ITEM_TM27_RETURN,
-        .price = 1000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM27ItemDescription,
@@ -5713,11 +5713,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM28_DIG] =
+    [ITEM_TM28_LEECH_LIFE] = 
     {
         .name = _("TM28"),
-        .itemId = ITEM_TM28_DIG,
-        .price = 2000,
+        .itemId = ITEM_TM28_LEECH_LIFE,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM28ItemDescription,
@@ -5731,11 +5731,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM29_PSYCHIC] =
+    [ITEM_TM29_PSYCHIC] = 
     {
         .name = _("TM29"),
         .itemId = ITEM_TM29_PSYCHIC,
-        .price = 2000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM29ItemDescription,
@@ -5749,7 +5749,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM30_SHADOW_BALL] =
+    [ITEM_TM30_SHADOW_BALL] = 
     {
         .name = _("TM30"),
         .itemId = ITEM_TM30_SHADOW_BALL,
@@ -5767,7 +5767,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM31_BRICK_BREAK] =
+    [ITEM_TM31_BRICK_BREAK] = 
     {
         .name = _("TM31"),
         .itemId = ITEM_TM31_BRICK_BREAK,
@@ -5785,11 +5785,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM32_DOUBLE_TEAM] =
+    [ITEM_TM32_DOUBLE_TEAM] = 
     {
         .name = _("TM32"),
         .itemId = ITEM_TM32_DOUBLE_TEAM,
-        .price = 2000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM32ItemDescription,
@@ -5803,7 +5803,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM33_REFLECT] =
+    [ITEM_TM33_REFLECT] = 
     {
         .name = _("TM33"),
         .itemId = ITEM_TM33_REFLECT,
@@ -5821,10 +5821,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM34_SHOCK_WAVE] =
+    [ITEM_TM34_SLUDGE_WAVE] = 
     {
         .name = _("TM34"),
-        .itemId = ITEM_TM34_SHOCK_WAVE,
+        .itemId = ITEM_TM34_SLUDGE_WAVE,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -5839,7 +5839,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM35_FLAMETHROWER] =
+    [ITEM_TM35_FLAMETHROWER] = 
     {
         .name = _("TM35"),
         .itemId = ITEM_TM35_FLAMETHROWER,
@@ -5857,11 +5857,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM36_SLUDGE_BOMB] =
+    [ITEM_TM36_SLUDGE_BOMB] = 
     {
         .name = _("TM36"),
         .itemId = ITEM_TM36_SLUDGE_BOMB,
-        .price = 1000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM36ItemDescription,
@@ -5875,11 +5875,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM37_SANDSTORM] =
+    [ITEM_TM37_SANDSTORM] = 
     {
         .name = _("TM37"),
         .itemId = ITEM_TM37_SANDSTORM,
-        .price = 2000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM37ItemDescription,
@@ -5893,11 +5893,11 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM38_FIRE_BLAST] =
+    [ITEM_TM38_FIRE_BLAST] = 
     {
         .name = _("TM38"),
         .itemId = ITEM_TM38_FIRE_BLAST,
-        .price = 5500,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM38ItemDescription,
@@ -5911,7 +5911,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM39_ROCK_TOMB] =
+    [ITEM_TM39_ROCK_TOMB] = 
     {
         .name = _("TM39"),
         .itemId = ITEM_TM39_ROCK_TOMB,
@@ -5929,7 +5929,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM40_AERIAL_ACE] =
+    [ITEM_TM40_AERIAL_ACE] = 
     {
         .name = _("TM40"),
         .itemId = ITEM_TM40_AERIAL_ACE,
@@ -5947,7 +5947,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM41_TORMENT] =
+    [ITEM_TM41_TORMENT] = 
     {
         .name = _("TM41"),
         .itemId = ITEM_TM41_TORMENT,
@@ -5965,7 +5965,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM42_FACADE] =
+    [ITEM_TM42_FACADE] = 
     {
         .name = _("TM42"),
         .itemId = ITEM_TM42_FACADE,
@@ -5983,10 +5983,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM43_SECRET_POWER] =
+    [ITEM_TM43_FLAME_CHARGE] = 
     {
         .name = _("TM43"),
-        .itemId = ITEM_TM43_SECRET_POWER,
+        .itemId = ITEM_TM43_FLAME_CHARGE,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -6001,7 +6001,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM44_REST] =
+    [ITEM_TM44_REST] = 
     {
         .name = _("TM44"),
         .itemId = ITEM_TM44_REST,
@@ -6019,7 +6019,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM45_ATTRACT] =
+    [ITEM_TM45_ATTRACT] = 
     {
         .name = _("TM45"),
         .itemId = ITEM_TM45_ATTRACT,
@@ -6037,7 +6037,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM46_THIEF] =
+    [ITEM_TM46_THIEF] = 
     {
         .name = _("TM46"),
         .itemId = ITEM_TM46_THIEF,
@@ -6055,10 +6055,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM47_STEEL_WING] =
+    [ITEM_TM47_LOW_SWEEP] = 
     {
         .name = _("TM47"),
-        .itemId = ITEM_TM47_STEEL_WING,
+        .itemId = ITEM_TM47_LOW_SWEEP,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -6073,10 +6073,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM48_SKILL_SWAP] =
+    [ITEM_TM48_ROUND] = 
     {
         .name = _("TM48"),
-        .itemId = ITEM_TM48_SKILL_SWAP,
+        .itemId = ITEM_TM48_ROUND,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -6091,10 +6091,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM49_SNATCH] =
+    [ITEM_TM49_ECHOED_VOICE] = 
     {
         .name = _("TM49"),
-        .itemId = ITEM_TM49_SNATCH,
+        .itemId = ITEM_TM49_ECHOED_VOICE,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
@@ -6109,7 +6109,7 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM50_OVERHEAT] =
+    [ITEM_TM50_OVERHEAT] = 
     {
         .name = _("TM50"),
         .itemId = ITEM_TM50_OVERHEAT,
@@ -6117,6 +6117,906 @@ const struct Item gItems[] =
         .holdEffect = HOLD_EFFECT_NONE,
         .holdEffectParam = 0,
         .description = gTM50ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM51_STEEL_WING] = 
+    {
+        .name = _("TM51"),
+        .itemId = ITEM_TM51_STEEL_WING,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM51ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM52_FOCUS_BLAST] = 
+    {
+        .name = _("TM52"),
+        .itemId = ITEM_TM52_FOCUS_BLAST,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM52ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM53_ENERGY_BALL] = 
+    {
+        .name = _("TM53"),
+        .itemId = ITEM_TM53_ENERGY_BALL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM53ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM54_FALSE_SWIPE] = 
+    {
+        .name = _("TM54"),
+        .itemId = ITEM_TM54_FALSE_SWIPE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM54ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM55_SCALD] = 
+    {
+        .name = _("TM55"),
+        .itemId = ITEM_TM55_SCALD,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM55ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM56_FLING] = 
+    {
+        .name = _("TM56"),
+        .itemId = ITEM_TM56_FLING,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM56ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM57_CHARGE_BEAM] = 
+    {
+        .name = _("TM57"),
+        .itemId = ITEM_TM57_CHARGE_BEAM,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM57ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM58_SKY_DROP] = 
+    {
+        .name = _("TM58"),
+        .itemId = ITEM_TM58_SKY_DROP,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM58ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM59_BRUTAL_SWING] = 
+    {
+        .name = _("TM59"),
+        .itemId = ITEM_TM59_BRUTAL_SWING,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM59ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM60_QUASH] = 
+    {
+        .name = _("TM60"),
+        .itemId = ITEM_TM60_QUASH,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM60ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM61_WILL_O_WISP] = 
+    {
+        .name = _("TM61"),
+        .itemId = ITEM_TM61_WILL_O_WISP,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM61ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM62_ACROBATICS] = 
+    {
+        .name = _("TM62"),
+        .itemId = ITEM_TM62_ACROBATICS,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM62ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM63_EMBARGO] = 
+    {
+        .name = _("TM63"),
+        .itemId = ITEM_TM63_EMBARGO,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM63ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM64_EXPLOSION] = 
+    {
+        .name = _("TM64"),
+        .itemId = ITEM_TM64_EXPLOSION,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM64ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM65_SHADOW_CLAW] = 
+    {
+        .name = _("TM65"),
+        .itemId = ITEM_TM65_SHADOW_CLAW,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM65ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM66_PAYBACK] = 
+    {
+        .name = _("TM66"),
+        .itemId = ITEM_TM66_PAYBACK,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM66ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM67_SMART_STRIKE] = 
+    {
+        .name = _("TM67"),
+        .itemId = ITEM_TM67_SMART_STRIKE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM67ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM68_GIGA_IMPACT] = 
+    {
+        .name = _("TM68"),
+        .itemId = ITEM_TM68_GIGA_IMPACT,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM68ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM69_ROCK_POLISH] = 
+    {
+        .name = _("TM69"),
+        .itemId = ITEM_TM69_ROCK_POLISH,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM69ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM70_AURORA_VEIL] = 
+    {
+        .name = _("TM70"),
+        .itemId = ITEM_TM70_AURORA_VEIL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM70ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM71_STONE_EDGE] = 
+    {
+        .name = _("TM71"),
+        .itemId = ITEM_TM71_STONE_EDGE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM71ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM72_VOLT_SWITCH] = 
+    {
+        .name = _("TM72"),
+        .itemId = ITEM_TM72_VOLT_SWITCH,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM72ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM73_THUNDER_WAVE] = 
+    {
+        .name = _("TM73"),
+        .itemId = ITEM_TM73_THUNDER_WAVE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM73ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM74_GYRO_BALL] = 
+    {
+        .name = _("TM74"),
+        .itemId = ITEM_TM74_GYRO_BALL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM74ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM75_SWORDS_DANCE] = 
+    {
+        .name = _("TM75"),
+        .itemId = ITEM_TM75_SWORDS_DANCE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM75ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM76_FLY] = 
+    {
+        .name = _("TM76"),
+        .itemId = ITEM_TM76_FLY,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM76ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM77_PSYCH_UP] = 
+    {
+        .name = _("TM77"),
+        .itemId = ITEM_TM77_PSYCH_UP,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM77ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM78_BULLDOZE] = 
+    {
+        .name = _("TM78"),
+        .itemId = ITEM_TM78_BULLDOZE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM78ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM79_FROST_BREATH] = 
+    {
+        .name = _("TM79"),
+        .itemId = ITEM_TM79_FROST_BREATH,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM79ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM80_ROCK_SLIDE] = 
+    {
+        .name = _("TM80"),
+        .itemId = ITEM_TM80_ROCK_SLIDE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM80ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM81_X_SCISSOR] = 
+    {
+        .name = _("TM81"),
+        .itemId = ITEM_TM81_X_SCISSOR,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM81ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM82_DRAGON_TAIL] = 
+    {
+        .name = _("TM82"),
+        .itemId = ITEM_TM82_DRAGON_TAIL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM82ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM83_INFESTATION] = 
+    {
+        .name = _("TM83"),
+        .itemId = ITEM_TM83_INFESTATION,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM83ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM84_POISON_JAB] = 
+    {
+        .name = _("TM84"),
+        .itemId = ITEM_TM84_POISON_JAB,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM84ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM85_DREAM_EATER] = 
+    {
+        .name = _("TM85"),
+        .itemId = ITEM_TM85_DREAM_EATER,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM85ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM86_GRASS_KNOT] = 
+    {
+        .name = _("TM86"),
+        .itemId = ITEM_TM86_GRASS_KNOT,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM86ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM87_SWAGGER] = 
+    {
+        .name = _("TM87"),
+        .itemId = ITEM_TM87_SWAGGER,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM87ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM88_SLEEP_TALK] = 
+    {
+        .name = _("TM88"),
+        .itemId = ITEM_TM88_SLEEP_TALK,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM88ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM89_U_TURN] = 
+    {
+        .name = _("TM89"),
+        .itemId = ITEM_TM89_U_TURN,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM89ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM90_SUBSTITUTE] = 
+    {
+        .name = _("TM90"),
+        .itemId = ITEM_TM90_SUBSTITUTE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM90ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM91_FLASH_CANNON] = 
+    {
+        .name = _("TM91"),
+        .itemId = ITEM_TM91_FLASH_CANNON,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM91ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM92_TRICK_ROOM] = 
+    {
+        .name = _("TM92"),
+        .itemId = ITEM_TM92_TRICK_ROOM,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM92ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM93_WILD_CHARGE] = 
+    {
+        .name = _("TM93"),
+        .itemId = ITEM_TM93_WILD_CHARGE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM93ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM94_SURF] = 
+    {
+        .name = _("TM94"),
+        .itemId = ITEM_TM94_SURF,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM94ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM95_SNARL] = 
+    {
+        .name = _("TM95"),
+        .itemId = ITEM_TM95_SNARL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM95ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM96_NATURE_POWER] = 
+    {
+        .name = _("TM96"),
+        .itemId = ITEM_TM96_NATURE_POWER,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM96ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM97_DARK_PULSE] = 
+    {
+        .name = _("TM97"),
+        .itemId = ITEM_TM97_DARK_PULSE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM97ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM98_WATERFALL] = 
+    {
+        .name = _("TM98"),
+        .itemId = ITEM_TM98_WATERFALL,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM98ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM99_DAZZLING_GLEAM] = 
+    {
+        .name = _("TM99"),
+        .itemId = ITEM_TM99_DAZZLING_GLEAM,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM99ItemDescription,
+        .importance = 0,
+        .unk19 = 0,
+        .pocket = POCKET_TM_HM,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0,
+    },
+
+    [ITEM_TM100_CONFIDE] = 
+    {
+        .name = _("TM100"),
+        .itemId = ITEM_TM100_CONFIDE,
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_NONE,
+        .holdEffectParam = 0,
+        .description = gTM100ItemDescription,
         .importance = 0,
         .unk19 = 0,
         .pocket = POCKET_TM_HM,

@@ -21,7 +21,6 @@ extern u16 gUnknown_0203CF30[];
 // this file's functions
 static bool8 CheckPyramidBagHasItem(u16 itemId, u16 count);
 static bool8 CheckPyramidBagHasSpace(u16 itemId, u16 count);
-static void DeserializeTmHmItemSlots(void);
 
 // EWRAM variables
 EWRAM_DATA struct BagPocket gBagPockets[POCKETS_COUNT] = {0};
@@ -67,13 +66,18 @@ void ApplyNewEncryptionKeyToBagItems_(u32 newKey) // really GF?
     ApplyNewEncryptionKeyToBagItems(newKey);
 }
 
-static void DeserializeTmHmItemSlots(void)
+void DeserializeTmHmItemSlots(void)
 {
     int i;
-
+    for(i = 0; i < BAG_TMHM_COUNT; ++i)
+    {
+        gTmHmItemSlots[i].itemId = 0;
+        SetBagItemQuantity(&(gTmHmItemSlots[i].quantity), 0);
+    }
     for(i = 0; i < TMHM_COUNT; ++i)
     {
-        if(gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[i / 8] % 8)
+        u8 bit = i % 8;
+        //if(gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[i / 8] & (1<<bit))
             AddBagItem(i + ITEM_TM01, 1);
     }
 }
@@ -91,7 +95,6 @@ void SetBagItemsPointers(void)
 
     gBagPockets[TMHM_POCKET].itemSlots = &gTmHmItemSlots[0];
     gBagPockets[TMHM_POCKET].capacity = BAG_TMHM_COUNT;
-    DeserializeTmHmItemSlots();
 
     gBagPockets[BERRIES_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Berries;
     gBagPockets[BERRIES_POCKET].capacity = BAG_BERRIES_COUNT;
@@ -410,7 +413,8 @@ _080D6916:\n\
 
 static void SetTmHmOwned(u16 itemId)
 {
-
+    u8* flagByte = &gSaveBlock1Ptr->bagPocket_TMHMOwnedFlags[(itemId - ITEM_TM01) / 8];
+    *flagByte = (*flagByte) | (1 << ((itemId - ITEM_TM01) % 8));
 }
 
 bool8 AddBagItem(u16 itemId, u16 count)

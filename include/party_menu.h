@@ -41,7 +41,7 @@ struct Struct203CEC8
     s16 unk10;
 };
 
-#define TMHM_COUNT 58
+#define TMHM_COUNT 100
 
 extern struct Struct203CEC8 gUnknown_0203CEC8;
 extern u8 gUnknown_0203CEE8;

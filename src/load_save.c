@@ -209,6 +209,7 @@ void LoadSerializedGame(void)
 {
     LoadPlayerParty();
     LoadEventObjects();
+    DeserializeTmHmItemSlots();
 }
 
 void LoadPlayerBag(void)
