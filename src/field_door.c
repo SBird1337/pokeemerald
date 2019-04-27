@@ -887,6 +887,9 @@ u32 GetDoorSoundEffect(u32 x, u32 y)
 
 bool8 sub_808A964(void)
 {
+    //TABULA_RASA: This is related to BATTLE_FRONTIER which does not exist anymore, so it just returns false
+    return FALSE;
+    /*
     if (FlagGet(FLAG_SPECIAL_FLAG_0x4002))
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_TOWER_CORRIDOR2) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_CORRIDOR2))
@@ -895,4 +898,5 @@ bool8 sub_808A964(void)
         }
     }
     return FALSE;
+    */
 }

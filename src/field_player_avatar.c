@@ -780,6 +780,9 @@ static void check_acro_bike_metatile(s16 unused1, s16 unused2, u8 c, u8 *d)
 
 bool8 IsPlayerCollidingWithFarawayIslandMew(u8 direction)
 {
+    //TABULA_RASA: This is about the mew minigame on FarawayIsland which doesn ot exist anymore, this returns false
+    return FALSE;
+    /*
     u8 mewObjectId;
     struct EventObject *object;
     s16 playerX;
@@ -810,6 +813,7 @@ bool8 IsPlayerCollidingWithFarawayIslandMew(u8 direction)
         }
     }
     return FALSE;
+    */
 }
 
 void SetPlayerAvatarTransitionFlags(u16 transitionFlags)

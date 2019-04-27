@@ -1530,6 +1530,9 @@ static void Task_HandleFrontierMap(u8 taskId)
 
 static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
 {
+    //TABULA_RASA: This is related to the BattleFrontier which does not exist anymore. It just returns 0, meaning the mapNum is not a frontier map number.
+    return 0;
+    /*
     if ((mapNum >= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_LOBBY) && mapNum <= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM))
         || (mapNum >= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_BATTLE_ROOM) && mapNum <= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM2)))
         return FRONTIER_FACILITY_TOWER + 1;
@@ -1563,6 +1566,7 @@ static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a fro
         return FRONTIER_FACILITY_PYRAMID + 1;
     else
         return 0;
+    */
 }
 
 static void InitFrontierMapSprites(void)
@@ -1589,6 +1593,11 @@ static void InitFrontierMapSprites(void)
     StartSpriteAnim(sMapData->mapIndicatorSprite, sMapLandmarks[sMapData->cursorPos].animNum);
 
     // Create player indicator head sprite only if it's in vicinity of battle frontier.
+    
+    //TABULA_RASA: This is something related to the battle frontier, it should not be called and to be fair, most of the call chain here is not needed
+    //             without battle frontier, but that's a rabbit hole I am not walking down right now.
+    AGB_WARNING(FALSE);
+    /*
     id = GetCurrentRegionMapSectionId();
     if (id == MAPSEC_BATTLE_FRONTIER || id == MAPSEC_ARTISAN_CAVE)
     {
@@ -1647,6 +1656,7 @@ static void InitFrontierMapSprites(void)
         if (gSaveBlock2Ptr->playerGender != MALE)
             StartSpriteAnim(sMapData->playerHeadSprite, 1);
     }
+    */
 }
 
 static void PrintOnFrontierMap(void)

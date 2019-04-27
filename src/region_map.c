@@ -966,6 +966,8 @@ static void RegionMap_InitializeStateBasedOnPlayerLocation(void)
     u16 xOnMap;
     struct WarpData *warp;
 
+    //TABULA_RASA: This handles stuff related to the SS Tidal, which does not exist anymore
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SS_TIDAL_CORRIDOR)
         && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(SS_TIDAL_CORRIDOR)
             || gSaveBlock1Ptr->location.mapNum == MAP_NUM(SS_TIDAL_LOWER_DECK)
@@ -974,6 +976,7 @@ static void RegionMap_InitializeStateBasedOnPlayerLocation(void)
         RegionMap_InitializeStateBasedOnSSTidalLocation();
         return;
     }
+    */
 
     switch (GetMapTypeByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum))
     {
@@ -1131,6 +1134,10 @@ static void RegionMap_InitializeStateBasedOnPlayerLocation(void)
 
 static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
 {
+    //TABULA_RASA: This handled stuff for the region map initialization if the player is on the SS Tidal Map. The map itself does not exist anymore, and this function should not be called anymore.
+    //TABULA_RASA: NOTE: A warning is issued should this ever be called
+    AGB_WARNING(FALSE);
+    /*
     u16 y;
     u16 x;
     u8 mapGroup;
@@ -1179,6 +1186,7 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
     gRegionMap->playerIsInCave = FALSE;
     gRegionMap->cursorPosX = gRegionMapEntries[gRegionMap->mapSecId].x + x + MAPCURSOR_X_MIN;
     gRegionMap->cursorPosY = gRegionMapEntries[gRegionMap->mapSecId].y + y + MAPCURSOR_Y_MIN;
+    */
 }
 
 static u8 get_flagnr_blue_points(u16 mapSecId)

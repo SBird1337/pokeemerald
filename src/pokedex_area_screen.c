@@ -103,11 +103,14 @@ static const u16 sMovingRegionMapSections[3] =
     MAPSEC_TERRA_CAVE
 };
 
+//TABULA_RASA: This weird struct is used to determine Feebas catch location
+/*
 static const u16 sFeebasData[][3] =
 {
     {SPECIES_FEEBAS, MAP_GROUP(ROUTE119), MAP_NUM(ROUTE119)},
     {NUM_SPECIES}
 };
+*/
 
 static const u16 sLandmarkData[][2] =
 {
@@ -352,6 +355,9 @@ static void FindMapsWithMon(u16 species)
                 return;
         }
 
+        //TABULA_RASA: This used the weird Feebas struct, I'm not quite sure if I understood how it worked, but it's gone
+
+        /*
         for (i = 0; sFeebasData[i][0] != NUM_SPECIES; i++)
         {
             if (species == sFeebasData[i][0])
@@ -368,7 +374,11 @@ static void FindMapsWithMon(u16 species)
                 }
             }
         }
+        */
 
+
+        //TABULA_RASA: This sets pokemon catch locations for special areas. The special areas are gone
+        /*
         for (i = 0; gWildMonHeaders[i].mapGroup != 0xFF; i++)
         {
             if (MapHasMon(&gWildMonHeaders[i], species))
@@ -385,6 +395,7 @@ static void FindMapsWithMon(u16 species)
                 }
             }
         }
+        */
     }
     else
     {

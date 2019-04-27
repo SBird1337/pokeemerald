@@ -129,6 +129,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
+    //TABULA_RASA: NOTE: This is the function that sets the player's starting position. Change it accordingly!
     SetWarpDestination(MAP_GROUP(INSIDE_OF_TRUCK), MAP_NUM(INSIDE_OF_TRUCK), -1, -1, -1);
     WarpIntoMap();
 }

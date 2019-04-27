@@ -237,6 +237,9 @@ void EndTruckSequence(u8 taskId)
 
 bool8 sub_80FB59C(void)
 {
+    //TABULA_RASA: This is related to the SS Tidal special, which was removed. This now returns false.
+    return FALSE;
+    /*
     s8 mapGroup, mapNum;
     s16 x, y;
 
@@ -249,6 +252,7 @@ bool8 sub_80FB59C(void)
         SetWarpDestination(mapGroup, mapNum, -1, x, y);
         return TRUE;
     }
+    */
 }
 
 void Task_HandlePorthole(u8 taskId)
@@ -336,10 +340,13 @@ void sub_80FB768(void)
 
 void sub_80FB7A4(void)
 {
+    //TABULA_RASA: This special is related to the SS Tidal, which does not exist anymore. It is now a nullsub
+    /*
     FlagSet(FLAG_SYS_CRUISE_MODE);
     FlagSet(FLAG_SPECIAL_FLAG_0x4001);
     FlagSet(FLAG_HIDE_MAP_NAME_POPUP);
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, -1);
     sub_80FB59C();
     sub_80AF8B8();
+    */
 }

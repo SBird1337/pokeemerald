@@ -261,9 +261,12 @@ IWRAM_DATA static u16 gUnknown_030012A8[8];
 
 bool8 IsMirageTowerVisible(void)
 {
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)))
+    //TABULA_RASA: This is an unreferenced function that tells you if mirage tower, which does not exist anymore, is visible. It just returns false
+    return FALSE;
+    /*if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)))
         return FALSE;
     return FlagGet(FLAG_MIRAGE_TOWER_VISIBLE);
+    */
 }
 
 static void UpdateMirageTowerPulseBlend(u8 taskId)
@@ -278,6 +281,8 @@ void ClearMirageTowerPulseBlend(void)
 
 void TryStartMirageTowerPulseBlendEffect(void)
 {
+    //TABULA_RASA: This is related to the MirageTower which does not exist anymore on ROUTE111
+    /*
     if (sMirageTowerPulseBlend)
     {
         sMirageTowerPulseBlend = NULL;
@@ -294,10 +299,13 @@ void TryStartMirageTowerPulseBlendEffect(void)
     InitPulseBlendPaletteSettings(&sMirageTowerPulseBlend->pulseBlend, &gMirageTowerPulseBlendSettings);
     MarkUsedPulseBlendPalettes(&sMirageTowerPulseBlend->pulseBlend, 0x1, TRUE);
     sMirageTowerPulseBlend->taskId = CreateTask(UpdateMirageTowerPulseBlend, 0xFF);
+    */
 }
 
 void ClearMirageTowerPulseBlendEffect(void)
 {
+    //TABULA_RASA: This is related to the MirageTower which does not exist anymore on ROUTE111
+    /*
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
      || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(ROUTE111)
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE)
@@ -310,6 +318,7 @@ void ClearMirageTowerPulseBlendEffect(void)
     UnmarkUsedPulseBlendPalettes(&sMirageTowerPulseBlend->pulseBlend, 0x1, TRUE);
     UnloadUsedPulseBlendPalettes(&sMirageTowerPulseBlend->pulseBlend, 0x1, TRUE);
     FREE_AND_SET_NULL(sMirageTowerPulseBlend);
+    */
 }
 
 void SetMirageTowerVisibility(void)

@@ -1023,6 +1023,9 @@ u8 sub_808554C(void)
 
 static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
 {
+    //TABULA_RASA: This is related to some special music during an event, which does not exist anymore. It just returns false
+    return FALSE;
+    /*
     if (!FlagGet(FLAG_SYS_WEATHER_CTRL))
         return FALSE;
     if (warp->mapGroup == 0)
@@ -1052,10 +1055,14 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
         }
     }
     return FALSE;
+    */
 }
 
 static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
 {
+    //TABULA_RASA: This is related to some special music during an event, which does not exist anymore. It just returns false
+    return FALSE;
+    /*
     if (VarGet(VAR_SKY_PILLAR_STATE) != 1)
         return FALSE;
     else if (warp->mapGroup != MAP_GROUP(SOOTOPOLIS_CITY))
@@ -1064,10 +1071,14 @@ static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
         return TRUE;
     else
         return FALSE;
+    */
 }
 
 static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
+    //TABULA_RASA: This is related to some special music during an event, which does not exist anymore. It just returns false
+    return FALSE;
+    /*
     if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
         return FALSE;
     else if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
@@ -1077,10 +1088,14 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
         return TRUE;
     else
         return FALSE;
+    */
 }
 
 static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 {
+    //TABULA_RASA: This is related to some special music during an event, which does not exist anymore. It just returns false
+    return FALSE;
+    /*
     if (VarGet(VAR_MOSSDEEP_STATE) == 0)
         return FALSE;
     else if (VarGet(VAR_MOSSDEEP_STATE) > 2)
@@ -1091,6 +1106,7 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
      || warp->mapNum == MAP_NUM(MOSSDEEP_CITY_SPACE_CENTER_2F))
         return TRUE;
     return FALSE;
+    */
 }
 
 u16 GetLocationMusic(struct WarpData *warp)
@@ -1109,14 +1125,15 @@ u16 GetLocationMusic(struct WarpData *warp)
 
 u16 GetCurrLocationDefaultMusic(void)
 {
+    //TABULA_RASA: This sets the default music, and overrides it for ROUTE111, which does not exist anymore. The override was removed
     u16 music;
-
     // Play the desert music only when the sandstorm is active on Route 111.
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)
      && GetSav1Weather() == WEATHER_SANDSTORM)
         return MUS_ASHROAD;
-
+    */
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
     if (music != MUS_ROUTE_118)
     {
@@ -1140,11 +1157,15 @@ u16 GetWarpDestinationMusic(void)
     }
     else
     {
+        //TABULA_RASA: This is again for changing music based on a specific map, it just returns the default music
+        return MUS_GRANROAD
+        /*
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAUVILLE_CITY))
             return MUS_DOORO_X1;
         else
             return MUS_GRANROAD;
+        */
     }
 }
 
@@ -1233,6 +1254,8 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_SPECIAL_FLAG_0x4001) != TRUE && warpMusic != GetCurrentMapMusic())
     {
+        //TABULA_RASA: This is for some music changing based on maps... Not too sure what it's about, but SootopolisCity does not exist anymore
+        /*
         if (currentMusic == MUS_NAMINORI
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY)
@@ -1242,6 +1265,7 @@ void TryFadeOutOldMapMusic(void)
             && sWarpDestination.x == 29
             && sWarpDestination.y == 53)
             return;
+        */
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }
 }
@@ -1317,6 +1341,10 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 
 static void ChooseAmbientCrySpecies(void)
 {
+    //TABULA_RASA: This handles cries different if MirageIsland is present, kinda neat... but MirageIsland and Route130 are both gone
+    //             We just assume that there is no MirageIsland
+    sAmbientCrySpecies = GetLocalWildMon(&sIsAmbientCryWaterMon);
+    /*
     if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE130)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE130))
      && !IsMirageIslandPresent())
@@ -1330,6 +1358,7 @@ static void ChooseAmbientCrySpecies(void)
     {
         sAmbientCrySpecies = GetLocalWildMon(&sIsAmbientCryWaterMon);
     }
+    */
 }
 
 u8 GetMapTypeByGroupAndId(s8 mapGroup, s8 mapNum)

@@ -270,6 +270,8 @@ u16 GetRecordedCyclingRoadResults(void) {
 }
 
 void UpdateCyclingRoadState(void) {
+    //TABULA_RASA: This is related to the CyclingRoad Map, which does not exist anymore. NOTE: This might be interesting if you plan your own CyclingRoad style map
+    /*
     if (gLastUsedWarp.mapNum == MAP_NUM(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE))
     {
         return;
@@ -280,6 +282,7 @@ void UpdateCyclingRoadState(void) {
         VarSet(VAR_CYCLING_CHALLENGE_STATE, 0);
         Overworld_SetSavedMusic(MUS_DUMMY);
     }
+    */
 }
 
 void SetSSTidalFlag(void)
@@ -304,6 +307,10 @@ bool32 CountSSTidalStep(u16 delta)
 
 u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 {
+    //TABULA_RASA: This is related to the SS Tidal special chain, which does not exist anymore. This should not be called anymmore.
+    AGB_WARNING(FALSE);
+    return 0;
+    /*
     u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
     switch (*GetVarPointer(VAR_PORTHOLE_STATE))
     {
@@ -356,6 +363,7 @@ u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
     *mapGroup = MAP_GROUP(ROUTE132);
     *y = 20;
     return 0;
+    */
 }
 
 bool32 ShouldDoWallyCall(void)
@@ -945,6 +953,9 @@ u8 GetBattleOutcome(void)
 
 void CableCarWarp(void)
 {
+    //TABULA_RASA: This is a special related to the cable car. It should not be called anymore.
+    AGB_WARNING(FALSE);
+    /*
     if (gSpecialVar_0x8004 != 0)
     {
         SetWarpDestination(MAP_GROUP(ROUTE112_CABLE_CAR_STATION), MAP_NUM(ROUTE112_CABLE_CAR_STATION), -1, 6, 4);
@@ -953,6 +964,7 @@ void CableCarWarp(void)
     {
         SetWarpDestination(MAP_GROUP(MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MT_CHIMNEY_CABLE_CAR_STATION), -1, 6, 4);
     }
+    */
 }
 
 void SetFlagInVar(void)
@@ -1407,6 +1419,10 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
 
 u8 TryUpdateRusturfTunnelState(void)
 {
+    //TABULA_RASA: This is a special related to the RusturfTunnel, which does not exist anymore. It should not be called anymore
+    AGB_WARNING(FALSE);
+    return FALSE;
+    /*
     if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RUSTURF_TUNNEL) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(RUSTURF_TUNNEL))
     {
         if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1))
@@ -1421,6 +1437,7 @@ u8 TryUpdateRusturfTunnelState(void)
         }
     }
     return FALSE;
+    */
 }
 
 void SetShoalItemFlag(u16 v0)
@@ -1669,11 +1686,15 @@ bool8 sub_813990C(void)
 
 bool8 InMultiBattleRoom(void)
 {
+    //TABULA_RASA: This is related to the battle frontier, which does not exist anymore. It returns false now
+    return FALSE;
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_BATTLE_ROOM)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_BATTLE_ROOM) &&
         VarGet(VAR_FRONTIER_BATTLE_MODE) == FRONTIER_MODE_MULTIS)
         return TRUE;
     return FALSE;
+    */
 }
 
 void sub_8139980(void)
@@ -1726,6 +1747,10 @@ const u16 gUnknown_085B2C06[][3] =
 
 void SetDepartmentStoreFloorVar(void)
 {
+    //TABULA_RASA: This is related to the DepartmentStore in LilycoveCity, which does not exist anymore. It should not be called anymore
+    AGB_WARNING(FALSE);
+    //TABULA_RASA: NOTE: In order to add your own elevator-style functionality you can take this special and adapt it for your mod. Make sure to remove the AGB_WARNING
+    /*
     u8 deptStoreFloor;
     switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
     {
@@ -1752,10 +1777,15 @@ void SetDepartmentStoreFloorVar(void)
             break;
     }
     VarSet(VAR_DEPT_STORE_FLOOR, deptStoreFloor);
+    */
 }
 
 u16 sub_81399F4(void)
 {
+    //TABULA_RASA: This is related to the LilycoveCity Department Store, which does not exist anymore. It should not be called anymore
+    AGB_WARNING(FALSE);
+    return 0;
+    /*
     gUnknown_0203AB60 = 0;
     gUnknown_0203AB62 = 0;
 
@@ -1787,6 +1817,7 @@ u16 sub_81399F4(void)
     }
 
     return gUnknown_0203AB62;
+    */
 }
 
 void ShakeScreenInElevator(void)
@@ -1975,11 +2006,15 @@ bool8 warp0_in_pokecenter(void)
 
 bool32 sub_8139ED0(void)
 {
+    //TABULA_RASA: This is a special related to the TrainerHill, which does not exist anymore. It therefore assumes that the player is currently not on TrainerHillEntrance, and returns true
+    return TRUE;
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
     {
         return FALSE;
     }
     return TRUE;
+    */
 }
 
 void UpdateFrontierManiac(u16 a0)
@@ -3348,6 +3383,8 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 
 void IncrementBirthIslandRockStepCount(void)
 {
+    //TABULA_RASA: This is related to BirthIsland, which does not exist anymore
+    /*
     u16 var = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BIRTH_ISLAND_EXTERIOR))
     {
@@ -3361,6 +3398,7 @@ void IncrementBirthIslandRockStepCount(void)
             VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, var);
         }
     }
+    */
 }
 
 void sub_813B1D0(void)
@@ -3450,6 +3488,10 @@ void CreateUnusualWeatherEvent(void)
 // returns TRUE if the weather is for Kyogre, and FALSE if it's for Groudon.
 bool32 GetUnusualWeatherMapNameAndType(void)
 {
+    //TABULA_RASA: This special is related to the WeatherInstitute, which does not exist anymore. It should not be called anymore.
+    AGB_WARNING(FALSE);
+    return FALSE;
+    /*
     static const u8 sUnusualWeatherMapNumbers[] = {
         MAP_NUM(ROUTE114),
         MAP_NUM(ROUTE114),
@@ -3481,10 +3523,14 @@ bool32 GetUnusualWeatherMapNameAndType(void)
     {
         return TRUE;
     }
+    */
 }
 
 bool8 UnusualWeatherHasExpired(void)
 {
+    //TABULA_RASA: This is related to the UnusualWeather special chain, which uses maps that don't exist anymore. It just returns false
+    return FALSE;
+    /*
     // Duplicate array.
     static const u8 sUnusualWeatherMapNumbers_2[] = {
         MAP_NUM(ROUTE114),
@@ -3563,6 +3609,7 @@ bool8 UnusualWeatherHasExpired(void)
         VarSet(VAR_UNUSUAL_WEATHER_STEP_COUNTER, steps);
         return FALSE;
     }
+    */
 }
 
 void Unused_SetWeatherSunny(void)
@@ -3842,10 +3889,18 @@ void sub_813B968(void)
 
 void sub_813B9A0(void)
 {
+    //TABULA_RASA: This special sets the HealingLocation to PetalBurgCity, which does not exist anymore. It should not be called anymore
+    //TABULA RASA: NOTE: This is actually kind of neat... This special is called after you get the 5th badge and therefore are able to use surf
+    //                   After that the ship that would bring you to DewfordTown does not exist anymore (Because you can surf on your own now)
+    //                   So for the specific edge case that you would not get the surf HM, lose a battle, and respawn in DewfordTown,
+    //                   this special sets your HealinLocation to PetalburgCity in case it was DewfordTown before. 
+    AGB_WARNING(FALSE);
+    /*
     if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
     {
         SetLastHealLocationWarp(3);
     }
+    */
 }
 
 bool8 sub_813B9C0(void)

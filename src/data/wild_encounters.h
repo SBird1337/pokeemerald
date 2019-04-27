@@ -11,6 +11,8 @@
  
  //Start of regular Pokemon tables.
 
+//TABULA_RASA: Those defined wild encounters for maps that do not exist anymore: TODO: Add your own
+/*
 const struct WildPokemon gRoute101_LandMons[] =
 {
     {2, 2, SPECIES_WURMPLE},
@@ -3240,10 +3242,14 @@ const struct WildPokemon gMeteorFalls_StevensCave_LandMons[] =
 
 const struct WildPokemonInfo gMeteorFalls_StevensCave_LandMonsInfo = {10, gMeteorFalls_StevensCave_LandMons};
 
+*/
+
 //The actual headers that link the encounter tables to particular maps start here.
 
+//TABULA_RASA: TODO: Add actual encounters for your mod to this table as well
 const struct WildPokemonHeader gWildMonHeaders[] =
 {
+    /*
     {
         .mapGroup = MAP_GROUP(ROUTE101),
         .mapNum = MAP_NUM(ROUTE101),
@@ -4244,6 +4250,7 @@ const struct WildPokemonHeader gWildMonHeaders[] =
         .rockSmashMonsInfo = NULL,
         .fishingMonsInfo = NULL,
     },
+    */
 };
 
 //Battle Pyramid-specific tables and headers start here.

@@ -306,6 +306,8 @@ static u8 sub_81D4890(u8 ignoredDir)
 
 void UpdateFarawayIslandStepCounter(void)
 {
+    //TABULA_RASA: FarawayIsland does not exist anymore
+    /*
     u16 steps = VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER);
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
@@ -316,10 +318,14 @@ void UpdateFarawayIslandStepCounter(void)
         else
             VarSet(VAR_FARAWAY_ISLAND_STEP_COUNTER, steps);
     }
+    */
 }
 
 bool8 EventObjectIsFarawayIslandMew(struct EventObject *eventObject)
 {
+    //TABULA_RASA: FarawayIsland does not exist anymore, this returns false.
+    return FALSE;
+    /*
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
     {
@@ -328,18 +334,22 @@ bool8 EventObjectIsFarawayIslandMew(struct EventObject *eventObject)
     }
 
     return FALSE;
+    */
 }
 
 bool8 IsMewPlayingHideAndSeek(void)
 {
+    //TABULA_RASA: FarawayIsland does not exist anymore, this returns false.
+    return FALSE;
+    /*
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
     {
         if (FlagGet(FLAG_CAUGHT_MEW) != TRUE && FlagGet(FLAG_HIDE_MEW) != TRUE)
             return TRUE;
     }
-
     return FALSE;
+    */
 }
 
 bool8 sub_81D4A58(struct EventObject *eventObject)

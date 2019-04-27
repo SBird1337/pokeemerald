@@ -69,6 +69,9 @@ void DoBrailleRegisteelEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
+    //TABULA_RASA: Braille Maps do not exist anymore, this just returns false
+    return FALSE;
+    /*
     if (!FlagGet(FLAG_SYS_BRAILLE_DIG)
      && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEALED_CHAMBER_OUTER_ROOM)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEALED_CHAMBER_OUTER_ROOM)))
@@ -82,6 +85,7 @@ bool8 ShouldDoBrailleDigEffect(void)
     }
 
     return FALSE;
+    */
 }
 
 void DoBrailleDigEffect(void)
@@ -241,6 +245,9 @@ void SealedChamberShakingEffect(u8 taskId)
 // moved later in the function because it was rewritten.
 bool8 ShouldDoBrailleRegirockEffect(void)
 {
+    //TABULA_RASA: This does not exist anymore
+    return FALSE;
+    /*
     if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED)
         && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DESERT_RUINS)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(DESERT_RUINS))
@@ -263,6 +270,7 @@ bool8 ShouldDoBrailleRegirockEffect(void)
     }
 
     return FALSE;
+    */
 }
 
 void SetUpPuzzleEffectRegirock(void)
@@ -293,6 +301,8 @@ void DoBrailleRegirockEffect(void)
 
 bool8 ShouldDoBrailleRegisteelEffect(void)
 {
+    //TABULA_RASA: This does not exist anymore
+    /*
     if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ANCIENT_TOMB)))
     {
         if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 25)
@@ -302,6 +312,7 @@ bool8 ShouldDoBrailleRegisteelEffect(void)
         }
     }
     return FALSE;
+    */
 }
 
 void SetUpPuzzleEffectRegisteel(void)
@@ -427,6 +438,8 @@ bool8 FldEff_UsePuzzleEffect(void)
 
 bool8 ShouldDoBrailleRegicePuzzle(void)
 {
+    //TABULA_RASA: This does not exist anymore
+    /*
     u8 i;
 
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE)
@@ -483,4 +496,5 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
     }
 
     return FALSE;
+    */
 }
