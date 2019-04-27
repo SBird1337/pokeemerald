@@ -75,7 +75,7 @@ LinkContestRoom1_EventScript_23B829:: @ 823B829
 
 LinkContestRoom1_EventScript_23B834:: @ 823B834
 	special sub_80F8B94
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_LITTLEROOT_TOWN
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_LITTLEROOT_TOWN
 	call LinkContestRoom1_EventScript_23BB2B
 	end
 
@@ -416,28 +416,28 @@ LinkContestRoom1_EventScript_23BE44:: @ 823BE44
 	return
 
 LinkContestRoom1_EventScript_23BE84:: @ 823BE84
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
-	waitstate
+	//warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	//waitstate
 	end
 
 LinkContestRoom1_EventScript_23BE8E:: @ 823BE8E
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
-	waitstate
+	//warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	//waitstate
 	end
 
 LinkContestRoom1_EventScript_23BE98:: @ 823BE98
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
-	waitstate
+	//warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	//waitstate
 	end
 
 LinkContestRoom1_EventScript_23BEA2:: @ 823BEA2
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
-	waitstate
+	//warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	//waitstate
 	end
 
 LinkContestRoom1_EventScript_23BEAC:: @ 823BEAC
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 15, 4
-	waitstate
+	//warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 15, 4
+	//waitstate
 	end
 
 LilycoveCity_ContestLobby_EventScript_23BEB6:: @ 823BEB6

@@ -202,9 +202,10 @@ void Task_HandleTruckSequence(u8 taskId)
         data[1]++;
         if (data[1] == 120)
         {
-            MapGridSetMetatileIdAt(11, 8, 520);
-            MapGridSetMetatileIdAt(11, 9, 528);
-            MapGridSetMetatileIdAt(11, 10, 536);
+            //TABULA_RASA: NOTE: We don't want to draw some metatiles, you might also want to skip the whole truck scene
+            //MapGridSetMetatileIdAt(11, 8, 520);
+            //MapGridSetMetatileIdAt(11, 9, 528);
+            //MapGridSetMetatileIdAt(11, 10, 536);
             DrawWholeMapView();
             PlaySE(SE_TRACK_DOOR);
             DestroyTask(taskId);
@@ -216,9 +217,10 @@ void Task_HandleTruckSequence(u8 taskId)
 
 void ExecuteTruckSequence(void)
 {
-    MapGridSetMetatileIdAt(11, 8, 525);
-    MapGridSetMetatileIdAt(11, 9, 533);
-    MapGridSetMetatileIdAt(11, 10, 541);
+    //TABULA_RASA: NOTE: We do not want to set some metatiles, you might also want to skip the whole truck stuff in general
+    //MapGridSetMetatileIdAt(11, 8, 525);
+    //MapGridSetMetatileIdAt(11, 9, 533);
+    //MapGridSetMetatileIdAt(11, 10, 541);
     DrawWholeMapView();
     ScriptContext2_Enable();
     CpuFastFill(0, gPlttBufferFaded, 0x400);

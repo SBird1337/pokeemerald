@@ -68,33 +68,6 @@ OldaleTown_PokemonCenter_2F_EventScript_276B62:: @ 8276B62
 	release
 	end
 
-BattleFrontier_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-DewfordTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-EverGrandeCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-EverGrandeCity_PokemonLeague_2F_MapScript2_276B6C: @ 8276B6C
-FallarborTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-FortreeCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-LavaridgeTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-LilycoveCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-MauvilleCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-MossdeepCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-OldaleTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-PacifidlogTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-PetalburgCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-RustboroCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-SlateportCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-SootopolisCity_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-VerdanturfTown_PokemonCenter_2F_MapScript2_276B6C: @ 8276B6C
-	map_script_2 VAR_CABLE_CLUB_STATE, 1, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 2, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 5, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 3, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 4, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 6, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 7, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	map_script_2 VAR_CABLE_CLUB_STATE, 8, OldaleTown_PokemonCenter_2F_EventScript_276BAE
-	.2byte 0
-
 MossdeepCity_GameCorner_1F_EventScript_276BAE:: @ 8276BAE
 OldaleTown_PokemonCenter_2F_EventScript_276BAE:: @ 8276BAE
 	compare VAR_0x8007, 0
@@ -163,34 +136,6 @@ OldaleTown_PokemonCenter_2F_EventScript_276C2F:: @ 8276C2F
 OldaleTown_PokemonCenter_2F_EventScript_276C35:: @ 8276C35
 	call OldaleTown_PokemonCenter_2F_EventScript_277C0A
 	end
-
-BattleFrontier_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-DewfordTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-EverGrandeCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-EverGrandeCity_PokemonLeague_2F_MapScript2_276C3B: @ 8276C3B
-FallarborTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-FortreeCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-LavaridgeTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-LilycoveCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-MauvilleCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-MossdeepCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-OldaleTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-PacifidlogTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-PetalburgCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-RustboroCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-SlateportCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-SootopolisCity_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-VerdanturfTown_PokemonCenter_2F_MapScript2_276C3B: @ 8276C3B
-	map_script_2 VAR_CABLE_CLUB_TUTORIAL_STATE, 1, OldaleTown_PokemonCenter_2F_EventScript_276DE0
-	map_script_2 VAR_CABLE_CLUB_STATE, 1, OldaleTown_PokemonCenter_2F_EventScript_276C85
-	map_script_2 VAR_CABLE_CLUB_STATE, 2, OldaleTown_PokemonCenter_2F_EventScript_276C85
-	map_script_2 VAR_CABLE_CLUB_STATE, 5, OldaleTown_PokemonCenter_2F_EventScript_276C85
-	map_script_2 VAR_CABLE_CLUB_STATE, 3, OldaleTown_PokemonCenter_2F_EventScript_276CE7
-	map_script_2 VAR_CABLE_CLUB_STATE, 4, OldaleTown_PokemonCenter_2F_EventScript_276D2C
-	map_script_2 VAR_CABLE_CLUB_STATE, 6, OldaleTown_PokemonCenter_2F_EventScript_276D6C
-	map_script_2 VAR_CABLE_CLUB_STATE, 7, OldaleTown_PokemonCenter_2F_EventScript_276C85
-	map_script_2 VAR_CABLE_CLUB_STATE, 8, OldaleTown_PokemonCenter_2F_EventScript_276C9D
-	.2byte 0
 
 OldaleTown_PokemonCenter_2F_EventScript_276C85:: @ 8276C85
 	lockall
@@ -450,7 +395,7 @@ OldaleTown_PokemonCenter_2F_EventScript_276FBD:: @ 8276FBD
 	waitdooranim
 	applymovement EVENT_OBJ_ID_PLAYER, OldaleTown_PokemonCenter_2F_Movement_27735A
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -554,7 +499,7 @@ OldaleTown_PokemonCenter_2F_EventScript_27713A:: @ 827713A
 	waitdooranim
 	applymovement EVENT_OBJ_ID_PLAYER, OldaleTown_PokemonCenter_2F_Movement_27735A
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -629,7 +574,7 @@ OldaleTown_PokemonCenter_2F_EventScript_27724C:: @ 827724C
 	waitdooranim
 	applymovement EVENT_OBJ_ID_PLAYER, OldaleTown_PokemonCenter_2F_Movement_27735A
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -1029,7 +974,7 @@ OldaleTown_PokemonCenter_2F_EventScript_27759F:: @ 827759F
 	waitdooranim
 	applymovement EVENT_OBJ_ID_PLAYER, OldaleTown_PokemonCenter_2F_Movement_27735A
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor 5, 1
 	waitdooranim
 	special sub_8018090
@@ -1364,7 +1309,7 @@ OldaleTown_PokemonCenter_2F_EventScript_277B3A:: @ 8277B3A
 	waitdooranim
 	applymovement EVENT_OBJ_ID_PLAYER, OldaleTown_PokemonCenter_2F_Movement_27735A
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -1573,7 +1518,7 @@ MossdeepCity_GameCorner_1F_EventScript_277E0E:: @ 8277E0E
 	closemessage
 	applymovement EVENT_OBJ_ID_PLAYER, MossdeepCity_GameCorner_1F_Movement_277360
 	waitmovement 0
-	hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
+	//hideobjectat EVENT_OBJ_ID_PLAYER, MAP_PETALBURG_CITY
 	release
 	waitstate
 	end

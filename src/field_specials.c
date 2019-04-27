@@ -3906,6 +3906,8 @@ void sub_813B9A0(void)
 bool8 sub_813B9C0(void)
 {
     static const u16 gUnknown_085B3444[] = {
+        //TABULA_RASA: You might want to add your PokéCenter Maps here as well
+        /*
         MAP_OLDALE_TOWN_POKEMON_CENTER_1F,
         MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
@@ -3923,6 +3925,7 @@ bool8 sub_813B9C0(void)
         MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F,
         MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F,
         MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F,
+        */
         MAP_SINGLE_BATTLE_COLOSSEUM,
         MAP_TRADE_CENTER,
         MAP_RECORD_CORNER,

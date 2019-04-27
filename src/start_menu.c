@@ -827,7 +827,8 @@ static bool8 BattlePyramidRetireCallback(void)
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
         ScriptUnfreezeEventObjects();
         ScriptContext2_Disable();
-        ScriptContext1_SetupScript(BattleFrontier_BattlePyramidEmptySquare_EventScript_252C88);
+        //TABULA_RASA: This script does not exist anymore
+        //ScriptContext1_SetupScript(BattleFrontier_BattlePyramidEmptySquare_EventScript_252C88);
         return TRUE;
     }
 
@@ -941,14 +942,15 @@ static u8 SaveConfirmSaveCallback(void)
     RemoveStartMenuWindow();
     ShowSaveInfoWindow();
 
-    if (InBattlePyramid())
+    //TABULA_RASA: No more battle pyramid
+    /*if (InBattlePyramid())
     {
         ShowSaveMessage(gText_BattlePyramidConfirmRest, SaveYesNoCallback);
-    }
-    else
-    {
+    }*/
+    /*else*/
+    //{
         ShowSaveMessage(gText_ConfirmSave, SaveYesNoCallback);
-    }
+    //}
 
     return SAVE_IN_PROGRESS;
 }

@@ -618,8 +618,11 @@ static void CutGrassSpriteCallbackEnd(struct Sprite *sprite)
     ScriptUnfreezeEventObjects();
     ScriptContext2_Disable();
 
+    //TABULA_RASA: No more Faraway Island
+    /*
     if (IsMewPlayingHideAndSeek() == TRUE)
         ScriptContext1_SetupScript(FarawayIsland_Interior_EventScript_267EDB);
+    */
 }
 
 void FixLongGrassMetatilesWindowTop(s16 x, s16 y)

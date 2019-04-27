@@ -1503,7 +1503,8 @@ u8 GetBattlePyramindTrainerEncounterMusicId(u16 trainerId)
 
 void sub_81A9F80(void)
 {
-    ScriptContext1_SetupScript(BattleFrontier_BattlePyramidEmptySquare_EventScript_252C88);
+    //TABULA_RASA: This script does not exist anymore
+    //ScriptContext1_SetupScript(BattleFrontier_BattlePyramidEmptySquare_EventScript_252C88);
 }
 
 static u16 GetUniqueTrainerId(u8 eventObjectId)
@@ -1646,6 +1647,9 @@ void LoadBattlePyramidEventObjectTemplates(void)
 
 void LoadBattlePyramidFloorEventObjectScripts(void)
 {
+    //TABULA_RASA: This should not be executed
+    AGB_WARNING(FALSE);
+    /*
     int i;
     struct EventObjectTemplate *events = gSaveBlock1Ptr->eventObjectTemplates;
 
@@ -1656,6 +1660,7 @@ void LoadBattlePyramidFloorEventObjectScripts(void)
         else
             events[i].script = BattlePyramid_FindItemBall;
     }
+    */
 }
 
 static void GetPyramidEntranceAndExitSquareIds(u8 *entranceSquareId, u8 *exitSquareId)

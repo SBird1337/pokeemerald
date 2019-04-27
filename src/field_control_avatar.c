@@ -223,9 +223,10 @@ static bool8 TryStartInteractionScript(struct MapPosition *position, u16 metatil
         return FALSE;
 
     // Don't play interaction sound for certain scripts.
-    if (script != EventScript_PlayerPCMale
+    //TABULA_RASA: Some of those scripts dont exist anymore
+    if (script != /*EventScript_PlayerPCMale
      && script != EventScript_PlayerPCFemale
-     && script != EventScript_SecretBasePC
+     && script != */EventScript_SecretBasePC
      && script != EventScript_RecordMixingSecretBasePC
      && script != SecretBase_EventScript_DollInteract
      && script != SecretBase_EventScript_CushionInteract
@@ -371,16 +372,18 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_TV;
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)
         return EventScript_PC;
-    if (MetatileBehavior_IsClosedSootopolisDoor(metatileBehavior) == TRUE)
-        return EventScript_ClosedSootopolisDoor;
-    if (MetatileBehavior_IsUnknownClosedDoor(metatileBehavior) == TRUE)
-        return SkyPillar_Outside_EventScript_2393F9;
+    //TABULA_RASA: This one does not exist anymore so do some others
+    /*if (MetatileBehavior_IsClosedSootopolisDoor(metatileBehavior) == TRUE)
+        return EventScript_ClosedSootopolisDoor;*/
+    
+    //if (MetatileBehavior_IsUnknownClosedDoor(metatileBehavior) == TRUE)
+    //    return SkyPillar_Outside_EventScript_2393F9;
     if (MetatileBehavior_IsCableBoxResults1(metatileBehavior) == TRUE)
         return EventScript_CableBoxResults;
-    if (MetatileBehavior_IsPokeblockFeeder(metatileBehavior) == TRUE)
-        return EventScript_PokeBlockFeeder;
-    if (MetatileBehavior_IsTrickHousePuzzleDoor(metatileBehavior) == TRUE)
-        return Route110_TrickHouseEntrance_EventScript_26A22A;
+    //if (MetatileBehavior_IsPokeblockFeeder(metatileBehavior) == TRUE)
+    //    return EventScript_PokeBlockFeeder;
+    //if (MetatileBehavior_IsTrickHousePuzzleDoor(metatileBehavior) == TRUE)
+    //    return Route110_TrickHouseEntrance_EventScript_26A22A;
     if (MetatileBehavior_IsRegionMap(metatileBehavior) == TRUE)
         return EventScript_RegionMap;
     if (MetatileBehavior_IsRunningShoesManual(metatileBehavior) == TRUE)
@@ -513,11 +516,12 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
         ScriptContext1_SetupScript(EventScript_FallDownHole);
         return TRUE;
     }
-    else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))
+    //TABULA_RASA: This script does not exist anymore
+    /*else if (MetatileBehavior_IsBattlePyramidWarp(metatileBehavior))
     {
         ScriptContext1_SetupScript(BattleFrontier_BattlePyramidEmptySquare_EventScript_252BE8);
         return TRUE;
-    }
+    }*/
     else if (MetatileBehavior_IsSecretBaseGlitterMat(metatileBehavior) == TRUE)
     {
         DoSecretBaseGlitterMatSparkle();
@@ -561,12 +565,13 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
             ScriptContext1_SetupScript(UnusualWeather_EventScript_EndEventAndCleanup_1);
             return TRUE;
         }
-        if (ShouldDoBrailleRegicePuzzle() == TRUE)
+        //TABULA_RASA: Some of those event scripts do not exist anymore
+        /*if (ShouldDoBrailleRegicePuzzle() == TRUE)
         {
             ScriptContext1_SetupScript(IslandCave_EventScript_238EAF);
             return TRUE;
-        }
-        if (ShouldDoWallyCall() == TRUE)
+        }*/
+        /*if (ShouldDoWallyCall() == TRUE)
         {
             ScriptContext1_SetupScript(MauvilleCity_EventScript_1DF7BA);
             return TRUE;
@@ -590,16 +595,16 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
         {
             ScriptContext1_SetupScript(MossdeepCity_SpaceCenter_2F_EventScript_224175);
             return TRUE;
-        }
+        }*/
     }
 
     if (SafariZoneTakeStep() == TRUE)
         return TRUE;
-    if (CountSSTidalStep(1) == TRUE)
+    /*if (CountSSTidalStep(1) == TRUE)
     {
         ScriptContext1_SetupScript(SSTidalCorridor_EventScript_23C050);
         return TRUE;
-    }
+    }*/
     if (TryStartMatchCall())
         return TRUE;
     return FALSE;

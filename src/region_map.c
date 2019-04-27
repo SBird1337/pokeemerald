@@ -271,6 +271,7 @@ static const u8 sMapHealLocations[][3] =
 {
     //TABULA_RASA: NOTE: This is probably related to the flight ability, for each map you can fly to, you should add an entry here.
     //                   The last array entry is probably the HEAL_LOCATION as defined in heal_locations.h
+    {MAP_GROUP(TABULA_RASA), MAP_NUM(TABULA_RASA), HEAL_LOCATION_TABULA_RASA},
     /*
     {MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F},
     {MAP_GROUP(OLDALE_TOWN), MAP_NUM(OLDALE_TOWN), HEAL_LOCATION_OLDALE_TOWN},
@@ -2012,6 +2013,8 @@ static void sub_8124E0C(void)
                 {
                     switch (sFlyMap->regionMap.mapSecId)
                     {
+                        //TABULA_RASA: Here are some special HEAL_LOCATION things we don't have anymore
+                        /*
                         case MAPSEC_SOUTHERN_ISLAND:
                             SetWarpDestinationToHealLocation(HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR);
                             break;
@@ -2024,6 +2027,7 @@ static void sub_8124E0C(void)
                         case MAPSEC_EVER_GRANDE_CITY:
                             SetWarpDestinationToHealLocation(FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && sFlyMap->regionMap.posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_2 : HEAL_LOCATION_EVER_GRANDE_CITY_1);
                             break;
+                        */
                         default:
                             if (sMapHealLocations[sFlyMap->regionMap.mapSecId][2] != 0)
                             {
