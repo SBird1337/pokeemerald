@@ -17,7 +17,9 @@ EWRAM_DATA static u8 sRoamerLocation[2] = {0};
 
 static const u8 sRoamerLocations[][6] =
 {
-    { MAP_NUM(ROUTE110), MAP_NUM(ROUTE111), MAP_NUM(ROUTE117), MAP_NUM(ROUTE118), MAP_NUM(ROUTE134), 0xFF },
+    //TABULA_RASA: NOTE: This is related to the roamers, if you plan to use or modify them, add locations here
+    //                   The MAP_GROUP for the roamer is always 0, so if you plan to use it, it probably needs some fixing
+    /*{ MAP_NUM(ROUTE110), MAP_NUM(ROUTE111), MAP_NUM(ROUTE117), MAP_NUM(ROUTE118), MAP_NUM(ROUTE134), 0xFF },
     { MAP_NUM(ROUTE111), MAP_NUM(ROUTE110), MAP_NUM(ROUTE117), MAP_NUM(ROUTE118), 0xFF, 0xFF },
     { MAP_NUM(ROUTE117), MAP_NUM(ROUTE111), MAP_NUM(ROUTE110), MAP_NUM(ROUTE118), 0xFF, 0xFF },
     { MAP_NUM(ROUTE118), MAP_NUM(ROUTE117), MAP_NUM(ROUTE110), MAP_NUM(ROUTE111), MAP_NUM(ROUTE119), MAP_NUM(ROUTE123) },
@@ -36,7 +38,7 @@ static const u8 sRoamerLocations[][6] =
     { MAP_NUM(ROUTE131), MAP_NUM(ROUTE130), MAP_NUM(ROUTE132), 0xFF, 0xFF, 0xFF },
     { MAP_NUM(ROUTE132), MAP_NUM(ROUTE131), MAP_NUM(ROUTE133), 0xFF, 0xFF, 0xFF },
     { MAP_NUM(ROUTE133), MAP_NUM(ROUTE132), MAP_NUM(ROUTE134), 0xFF, 0xFF, 0xFF },
-    { MAP_NUM(ROUTE134), MAP_NUM(ROUTE133), MAP_NUM(ROUTE110), 0xFF, 0xFF, 0xFF },
+    { MAP_NUM(ROUTE134), MAP_NUM(ROUTE133), MAP_NUM(ROUTE110), 0xFF, 0xFF, 0xFF },*/
     { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF },
 };
 
@@ -80,7 +82,9 @@ static void CreateInitialRoamerMon(bool16 createLatios)
     (&gSaveBlock1Ptr->roamer)->smart = GetMonData(&gEnemyParty[0], MON_DATA_SMART);
     (&gSaveBlock1Ptr->roamer)->tough = GetMonData(&gEnemyParty[0], MON_DATA_TOUGH);
     sRoamerLocation[MAP_GRP] = 0;
-    sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+    //TABULA_RASA: The array is currently empty
+    sRoamerLocation[MAP_NUM] = 0xFF;
+    //sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
 }
 
 void InitRoamer(void)
@@ -114,7 +118,9 @@ void RoamerMoveToOtherLocationSet(void)
 
     while (1)
     {
-        mapNum = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+        //TABULA_RASA: The array is currently empty
+        mapNum = 0xFF;
+        //mapNum = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
         if (sRoamerLocation[MAP_NUM] != mapNum)
         {
             sRoamerLocation[MAP_NUM] = mapNum;

@@ -621,6 +621,9 @@ static EWRAM_DATA u8 gRotatingGate_PuzzleCount = 0;
 // text
 static s32 GetCurrentMapRotatingGatePuzzleType(void)
 {
+    //TABULA_RASA: This is related to the rotating gate puzzle that exists only on special maps
+    return PUZZLE_NONE;
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FORTREE_CITY_GYM) &&
         gSaveBlock1Ptr->location.mapNum == MAP_NUM(FORTREE_CITY_GYM))
     {
@@ -634,6 +637,7 @@ static s32 GetCurrentMapRotatingGatePuzzleType(void)
     }
 
     return PUZZLE_NONE;
+    */
 }
 
 static void RotatingGate_ResetAllGateOrientations(void)

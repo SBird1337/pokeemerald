@@ -271,8 +271,12 @@ static void sub_81B9E88(void)
 
 bool8 InSlateportBattleTent(void)
 {
+    //TABULA_RASA: This checks if we are in the battle tent.
+    return FALSE;
+    /*
     return gMapHeader.regionMapSectionId == MAPSEC_SLATEPORT_CITY
            && (gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_CORRIDOR || gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_BATTLE_ROOM);
+    */
 }
 
 static void sub_81B9EC0(void)

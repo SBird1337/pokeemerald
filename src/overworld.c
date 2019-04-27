@@ -839,8 +839,13 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+    //TABULA_RASA: Those MAPSECs cannot be reached
+    if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+        ShowMapNamePopup();
+    /*
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER || gMapHeader.regionMapSectionId != sLastMapSectionId)
         ShowMapNamePopup();
+    */
 }
 
 static void mli0_load_map(u32 a1)
@@ -851,12 +856,16 @@ static void mli0_load_map(u32 a1)
     LoadCurrentMapData();
     if (!(sUnknown_020322D8 & 1))
     {
+        //TABULA_RASA: This is related to BattlePyramid an TrainerHill, just call the default loader
+        LoadEventObjTemplatesFromHeader();
+        /*
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
             LoadBattlePyramidEventObjectTemplates();
         else if (InTrainerHill())
             sub_81D5DF8();
         else
             LoadEventObjTemplatesFromHeader();
+        */
     }
 
     isOutdoors = IsMapTypeOutdoors(gMapHeader.mapType);
@@ -879,12 +888,16 @@ static void mli0_load_map(u32 a1)
     RunOnTransitionMapScript();
     UpdateLocationHistoryForRoamer();
     RoamerMoveToOtherLocationSet();
+    //TABULA_RASA: For TrainerHill and Pyramid, just call the default loader
+    InitMap();
+    /*
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
         InitBattlePyramidMap(FALSE);
     else if (InTrainerHill())
         InitTrainerHillMap();
     else
         InitMap();
+    */
 
     if (a1 != 1 && isIndoors)
     {
@@ -1748,22 +1761,29 @@ void CB2_ContinueSavedGame(void)
     LoadSaveblockMapHeader();
     ClearDiveAndHoleWarps();
     trainerHillMapId = GetCurrentTrainerHillMapId();
-    if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
+    //TABULA_RASA: For BattlePyramid and TrainerHill - Just call the default loader
+    LoadSaveblockEventObjScripts();
+    /*if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
         LoadBattlePyramidFloorEventObjectScripts();
     else if (trainerHillMapId != 0 && trainerHillMapId != 6)
         sub_81D5F48();
     else
         LoadSaveblockEventObjScripts();
+    */
 
     UnfreezeEventObjects();
     DoTimeBasedEvents();
     sub_8084788();
+    //TABULA_RASA: For BattlePyramid and TrainerHill - Just call the default loader
+    InitMapFromSavedGame();
+    /*
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
         InitBattlePyramidMap(TRUE);
     else if (trainerHillMapId != 0)
         InitTrainerHillMap();
     else
         InitMapFromSavedGame();
+    */
 
     PlayTimeCounter_Start();
     ScriptContext1_Init();

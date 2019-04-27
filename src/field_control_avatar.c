@@ -788,6 +788,9 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
 {
     const struct WarpEvent *warpEvent;
 
+    //TABULA_RASA: This is related to the trainer hill, we will assume that there is no trainer hill
+    warpEvent = &gMapHeader.events->warps[warpEventId];
+    /*
     u8 trainerHillMapId = GetCurrentTrainerHillMapId();
 
     if (trainerHillMapId)
@@ -816,6 +819,7 @@ static void SetupWarp(struct MapHeader *unused, s8 warpEventId, struct MapPositi
     {
         warpEvent = &gMapHeader.events->warps[warpEventId];
     }
+    */
 
     if (warpEvent->mapNum == MAP_NUM(NONE))
     {

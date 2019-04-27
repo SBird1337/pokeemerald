@@ -1436,17 +1436,25 @@ u8 GetPyramidRunMultiplier(void)
 
 u8 InBattlePyramid(void)
 {
+    //TABULA_RASA: This checks if we are in battlePyramid, which we are not.
+    return FALSE;
+    /*
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
         return 1;
     else if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP)
         return 2;
     else
         return FALSE;
+    */
 }
 
 bool8 InBattlePyramid_(void)
 {
+    //TABULA_RASA: This also checks if we are in BattlePyramid, which we are not
+    return FALSE;
+    /*
     return gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP;
+    */
 }
 
 void sub_81A9E90(void)
@@ -1535,6 +1543,9 @@ static u16 GetUniqueTrainerId(u8 eventObjectId)
 
 void GenerateBattlePyramidFloorLayout(u16 *backupMapData, bool8 setPlayerPosition)
 {
+    //TABULA_RASA: This is for BattlePyramid, which does not exist anymore, this should never be called.
+    AGB_WARNING(FALSE);
+    /*
     int y, x;
     int i;
     u8 entranceSquareId, exitSquareId;
@@ -1584,6 +1595,7 @@ void GenerateBattlePyramidFloorLayout(u16 *backupMapData, bool8 setPlayerPositio
     }
     RunOnLoadMapScript();
     free(floorLayoutOffsets);
+    */
 }
 
 void LoadBattlePyramidEventObjectTemplates(void)

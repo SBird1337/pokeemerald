@@ -269,6 +269,9 @@ static const u32 sUnknown_085A1D68[] = INCBIN_U32("graphics/pokenav/fly_target_i
 
 static const u8 sMapHealLocations[][3] =
 {
+    //TABULA_RASA: NOTE: This is probably related to the flight ability, for each map you can fly to, you should add an entry here.
+    //                   The last array entry is probably the HEAL_LOCATION as defined in heal_locations.h
+    /*
     {MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F},
     {MAP_GROUP(OLDALE_TOWN), MAP_NUM(OLDALE_TOWN), HEAL_LOCATION_OLDALE_TOWN},
     {MAP_GROUP(DEWFORD_TOWN), MAP_NUM(DEWFORD_TOWN), HEAL_LOCATION_DEWFORD_TOWN},
@@ -319,6 +322,7 @@ static const u8 sMapHealLocations[][3] =
     {MAP_GROUP(ROUTE132), MAP_NUM(ROUTE132), 0},
     {MAP_GROUP(ROUTE133), MAP_NUM(ROUTE133), 0},
     {MAP_GROUP(ROUTE134), MAP_NUM(ROUTE134), 0}
+    */
 };
 
 static const u8 *const gUnknown_085A1ED4[] =

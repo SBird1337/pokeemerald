@@ -832,6 +832,13 @@ void UpdateTVScreensOnMap(int width, int height)
         case 2:
             break;
         default:
+            //TABULA_RASA: This is related to TV screens, I don't exactly know what it does, but we just assume the referenced maps don't exist
+            if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyTVNewsOnTheAir() != 0xFF || IsTVShowInSearchOfTrainersAiring()))
+            {
+                FlagClear(FLAG_SYS_TV_WATCH);
+                SetTVMetatilesOnMap(width, height, 0x3);
+            }
+            /*
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_COVE_LILY_MOTEL_1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
             {
                 SetTVMetatilesOnMap(width, height, 0x3);
@@ -841,6 +848,7 @@ void UpdateTVScreensOnMap(int width, int height)
                 FlagClear(FLAG_SYS_TV_WATCH);
                 SetTVMetatilesOnMap(width, height, 0x3);
             }
+            */
             break;
     }
 }
@@ -1575,9 +1583,12 @@ void SaveRecordedItemPurchasesForTVShow(void)
     TVShow *show;
     u8 i;
 
+    //TABULA_RASA: Some Maps are specially handled here, we just assume they are gone
+    /*
     if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
      && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_MART))
-     && !rbernoulli(1, 3))
+     && !rbernoulli(1, 3))*/
+    if(!rbernoulli(1,3))
     {
         sCurTVShowSlot = FindEmptyTVSlotBeyondFirstFiveShowsOfArray(gSaveBlock1Ptr->tvShows);
         if (sCurTVShowSlot != -1 && HasMixableShowAlreadyBeenSpawnedWithPlayerID(TVSHOW_SMART_SHOPPER, FALSE) != TRUE)
@@ -2807,19 +2818,24 @@ bool8 GetPriceReduction(u8 newsKind)
 
 bool8 IsPriceDiscounted(u8 newsKind)
 {
+    //TABULA_RASA: Something related to Price Discounts, I'm not sure
     switch (newsKind)
     {
         case POKENEWS_SLATEPORT:
+            /*
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY) && gSpecialVar_LastTalked == 25)
             {
                 return TRUE;
             }
+            */
             return FALSE;
         case POKENEWS_LILYCOVE:
+            /*
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
             {
                 return TRUE;
             }
+            */
             return FALSE;
     }
     return TRUE;
@@ -3522,6 +3538,9 @@ u32 GetPlayerIDAsU32(void)
 
 u8 CheckForBigMovieOrEmergencyNewsOnTV(void)
 {
+    //TABULA_RASA: Something with the player's gender and TVs, we just assume the maps are non-existant and return 0
+    return 0;
+    /*
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
     {
         return 0;
@@ -3549,10 +3568,15 @@ u8 CheckForBigMovieOrEmergencyNewsOnTV(void)
         return 2;
     }
     return 1;
+    */
 }
 
 void GetMomOrDadStringForTVMessage(void)
 {
+    //TABULA_RASA: This is a special that gets an initial string for TV messages. It uses MAP constants and should not be used anymore.
+    //             For the sake of preserving execution, a default string is loaded by whatever happens down there.
+    AGB_WARNING(FALSE);
+    /*
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
     {
         if (gSaveBlock2Ptr->playerGender == MALE)
@@ -3572,6 +3596,7 @@ void GetMomOrDadStringForTVMessage(void)
             }
         }
     }
+    */
     if (VarGet(VAR_TEMP_3) == 1)
     {
         StringCopy(gStringVar1, gText_Mom);
@@ -6257,20 +6282,25 @@ static void DoTVShowTodaysRivalTrainer(void)
         case 0:
             switch (show->rivalTrainer.location)
             {
+                //TABULA_RASA: This is related to some TV show, I'm not really sure about this one, but I just exclude the cases relying on maps
                 default:
                     sTVShowState = 7;
                     break;
+                /*
                 case MAPSEC_SECRET_BASE:
                     sTVShowState = 8;
                     break;
+                */
                 case MAPSEC_DYNAMIC:
                     switch (show->rivalTrainer.mapLayoutId)
                     {
+                        /*
                         case LAYOUT_SS_TIDAL_CORRIDOR:
                         case LAYOUT_SS_TIDAL_LOWER_DECK:
                         case LAYOUT_SS_TIDAL_ROOMS:
                             sTVShowState = 10;
                             break;
+                        */
                         default:
                             sTVShowState = 9;
                             break;
@@ -6467,11 +6497,14 @@ static void DoTVShowHoennTreasureInvestigators(void)
             {
                 switch (show->treasureInvestigators.mapLayoutId)
                 {
+                    //TABULA_RASA: This is TV stuff, we just ignore cases relying on maps again
+                    /*
                     case LAYOUT_SS_TIDAL_CORRIDOR:
                     case LAYOUT_SS_TIDAL_LOWER_DECK:
                     case LAYOUT_SS_TIDAL_ROOMS:
                         sTVShowState = 2;
                         break;
+                    */
                     default:
                         sTVShowState = 1;
                         break;

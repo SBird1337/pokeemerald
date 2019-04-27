@@ -572,6 +572,10 @@ static u32 AllocateFrontierPassData(void (*callback)(void))
 
     sPassData->callback = callback;
     i = GetCurrentRegionMapSectionId();
+    //TABULA_RASA: Those MAPSECs cannot be reachet
+    sPassData->cursorX = 176;
+    sPassData->cursorY = 48;
+    /*
     if (i != MAPSEC_BATTLE_FRONTIER && i != MAPSEC_ARTISAN_CAVE)
     {
         sPassData->cursorX = 176;
@@ -582,7 +586,7 @@ static u32 AllocateFrontierPassData(void (*callback)(void))
         sPassData->cursorX = 176;
         sPassData->cursorY = 48;
     }
-
+    */
     sPassData->battlePoints = gSaveBlock2Ptr->frontier.battlePoints;
     sPassData->hasBattleRecord = CanCopyRecordedBattleSaveData();
     sPassData->unkE = 0;

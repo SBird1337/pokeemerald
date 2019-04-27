@@ -301,7 +301,8 @@ static const struct EventObjectTemplate gUnknown_0862A670 =
     .trainerType = 1,
 };
 
-static const u32 gUnknown_0862A688[] = {MAP_NUM(TRAINER_HILL_2F), MAP_NUM(TRAINER_HILL_3F), MAP_NUM(TRAINER_HILL_4F), MAP_NUM(TRAINER_HILL_ROOF)};
+//TABULA_RASA: This is related to TrainerHill, which does not exist anymore
+//static const u32 gUnknown_0862A688[] = {MAP_NUM(TRAINER_HILL_2F), MAP_NUM(TRAINER_HILL_3F), MAP_NUM(TRAINER_HILL_4F), MAP_NUM(TRAINER_HILL_ROOF)};
 static const u8 gUnknown_0862A698[][3] = {{0, 1, 2}, {3, 4, 5}};
 
 // code
@@ -325,7 +326,10 @@ void ResetTrainerHillResults(void)
 
 static u8 GetFloorId(void)
 {
-    return gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
+    //TABULA_RASA: This is related to TRAINER_HILL and should not be executed
+    AGB_WARNING(FALSE);
+    return 0;
+    //return gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
 }
 
 u8 GetTrainerHillOpponentClass(u16 trainerId)
@@ -383,6 +387,9 @@ void FreeTrainerHillBattleStruct(void)
 
 static void SetUpDataStruct(void)
 {
+    //TABULA_RASA: This is related to TRAINER_HILL and should not be executed at all
+    AGB_WARNING(FALSE);
+    /*
     if (sHillData == NULL)
     {
         sHillData = AllocZeroed(sizeof(*sHillData));
@@ -390,6 +397,7 @@ static void SetUpDataStruct(void)
         CpuCopy32(sDataPerTag[gSaveBlock1Ptr->trainerHill.tag], &sHillData->tag, sizeof(sHillData->tag));
         nullsub_2();
     }
+    */
 }
 
 static void FreeDataStruct(void)
@@ -805,6 +813,9 @@ void sub_81D5FB4(u16 *mapArg)
 
 bool32 InTrainerHill(void)
 {
+    //TABULA_RASA: This checks if we are in TrainerHill
+    return FALSE;
+    /*
     bool32 ret;
 
     if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F
@@ -816,10 +827,14 @@ bool32 InTrainerHill(void)
         ret = FALSE;
 
     return ret;
+    */
 }
 
 u8 GetCurrentTrainerHillMapId(void)
 {
+    //TABULA_RASA: This is for TrainerHill generation and other things related
+    return 0;
+    /*
     u8 ret;
 
     if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F)
@@ -838,10 +853,14 @@ u8 GetCurrentTrainerHillMapId(void)
         ret = 0;
 
     return ret;
+    */
 }
 
 static bool32 sub_81D6100(void)
 {
+    //TABULA_RASA: This is related to TRAINER_HILL and will return false
+    return FALSE;
+    /*
     bool32 ret;
 
     if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ROOF)
@@ -850,17 +869,27 @@ static bool32 sub_81D6100(void)
         ret = FALSE;
 
     return ret;
+    */
 }
 
 const struct WarpEvent* sub_81D6120(void)
 {
+    //TABULA_RASA: This is related to the TrainerHill, which does not exist anymore, it should not be called anymore and returns NULL
+    AGB_WARNING(FALSE);
+    return NULL;
+    /*
     const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), MAP_NUM(TRAINER_HILL_4F));
 
     return &header->events->warps[1];
+    */
 }
 
 const struct WarpEvent* sub_81D6134(u8 warpEventId)
 {
+    //TABULA_RASA: This is related to the TrainerHill, which does not exist anymore, it should not be called anymore
+    AGB_WARNING(FALSE);
+    return NULL;
+    /*
     u8 id;
     const struct MapHeader *header;
 
@@ -873,6 +902,7 @@ const struct WarpEvent* sub_81D6134(u8 warpEventId)
 
     header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), gUnknown_0862A688[id - 1]);
     return &header->events->warps[0];
+    */
 }
 
 u16 LocalIdToHillTrainerId(u8 localId)

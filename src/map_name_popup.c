@@ -304,6 +304,10 @@ static void ShowMapNamePopUpWindow(void)
     u8 x;
     const u8* mapDisplayHeaderSource;
 
+    //TABULA_RASA: This is related to the BattlePyramid
+    withoutPrefixPtr = &(mapDisplayHeader[3]);
+    GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);
+    /*
     if (InBattlePyramid())
     {
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP)
@@ -318,11 +322,13 @@ static void ShowMapNamePopUpWindow(void)
         }
         StringCopy(withoutPrefixPtr, mapDisplayHeaderSource);
     }
+    
     else
     {
         withoutPrefixPtr = &(mapDisplayHeader[3]);
         GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);
     }
+    */
     AddMapNamePopUpWindow();
     LoadMapNamePopUpWindowBg();
     x = GetStringCenterAlignXOffset(7, withoutPrefixPtr, 80);

@@ -665,8 +665,12 @@ static u8 GetMoveBattleStyle(u16 move)
 
 bool8 InBattleFactory(void)
 {
+    //TABULA_RASA: This checks if we are in battle factory, which does not exist
+    return FALSE;
+    /*
     return gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM
         || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_FACTORY_BATTLE_ROOM;
+    */
 }
 
 static void RestorePlayerPartyHeldItems(void)

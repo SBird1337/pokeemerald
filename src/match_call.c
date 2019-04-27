@@ -1009,6 +1009,10 @@ static bool32 CheckMatchCallChance(void)
 
 static bool32 MapAllowsMatchCall(void)
 {
+    //TABULA_RASA: Those MAPSECs will not be reached
+    if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+        return FALSE;
+    /*
     if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) || gMapHeader.regionMapSectionId == MAPSEC_SAFARI_ZONE)
         return FALSE;
     
@@ -1021,7 +1025,7 @@ static bool32 MapAllowsMatchCall(void)
      && FlagGet(FLAG_MET_ARCHIE_METEOR_FALLS) == TRUE
      && FlagGet(FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY) == FALSE)
         return FALSE;
-
+    */
     return TRUE;
 }
 

@@ -6475,6 +6475,21 @@ void SetWildMonHeldItem(void)
             var1 = 20;
             var2 = 80;
         }
+        //TABULA_RASA: This is related to AlteringCave and should not be executed, skip it and do the else branch only.
+        if (gBaseStats[species].item1 == gBaseStats[species].item2 && gBaseStats[species].item1 != 0)
+        {
+            SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+        }
+        else
+        {
+            if (rnd < var1)
+                return;
+            if (rnd < var2)
+                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+            else
+                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+        }
+        /*
         if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE)
         {
             s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
@@ -6510,6 +6525,7 @@ void SetWildMonHeldItem(void)
                     SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
             }
         }
+        */
     }
 }
 

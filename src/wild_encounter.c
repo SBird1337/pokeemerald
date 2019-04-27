@@ -74,6 +74,9 @@ static u16 GetRoute119WaterTileNum(s16 x, s16 y, u8 section)
 
 static bool8 CheckFeebas(void)
 {
+    //TABULA_RASA: This is for the FEEBAS encounters, we just assume there is no Route119, and return false
+    return FALSE;
+    /*
     u8 i;
     u16 feebasSpots[NUM_FEEBAS_SPOTS];
     s16 x;
@@ -115,6 +118,7 @@ static bool8 CheckFeebas(void)
         }
     }
     return FALSE;
+    */
 }
 
 // The number 1103515245 comes from the example implementation of rand and srand
@@ -272,6 +276,8 @@ static u16 GetCurrentMapWildMonHeaderId(void)
         if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
             gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
         {
+            //TABULA_RASA: This is for altering cave, we just assume it does not exist
+            /*
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(ALTERING_CAVE))
             {
@@ -281,7 +287,7 @@ static u16 GetCurrentMapWildMonHeaderId(void)
 
                 i += alteringCaveId;
             }
-
+            */
             return i;
         }
     }
@@ -413,8 +419,13 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
+    //TABULA_RASA: This is about BattleFrontier and wild encounters
+    if (flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
+        return FALSE;
+    /*
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_RANDOM_ROOM3 && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
+    */
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
@@ -474,8 +485,9 @@ static bool8 DoWildEncounterRateTest(u32 encounterRate, bool8 ignoreAbility)
     {
         u32 ability = GetMonAbility(&gPlayerParty[0]);
 
-        if (ability == ABILITY_STENCH && gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
-            encounterRate = encounterRate * 3 / 4;
+        //TABULA_RASA: This is about encounter rates on BattlePyramid
+        /*if (ability == ABILITY_STENCH && gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
+            encounterRate = encounterRate * 3 / 4;*/
         else if (ability == ABILITY_STENCH)
             encounterRate /= 2;
         else if (ability == ABILITY_ILLUMINATE)
@@ -502,6 +514,9 @@ static bool8 DoGlobalWildEncounterDiceRoll(void)
 
 static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
 {
+    //TABULA_RASA: This is for the legendary event, which is not present due to the absence of SootpolisCity
+    return FALSE;
+    /*
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(SOOTOPOLIS_CITY)
      || gSaveBlock1Ptr->location.mapNum != MAP_NUM(SOOTOPOLIS_CITY))
     {
@@ -509,6 +524,7 @@ static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
     }
 
     return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
+    */
 }
 
 bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior)
@@ -522,6 +538,8 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
     headerId = GetCurrentMapWildMonHeaderId();
     if (headerId == 0xFFFF)
     {
+        //TABULA_RASA: This is about the BattleFrontier and cannot happen
+        /*
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_RANDOM_ROOM3)
         {
             headerId = GetBattlePikeWildMonHeaderId();
@@ -551,6 +569,7 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
             BattleSetup_StartWildBattle();
             return TRUE;
         }
+        */
     }
     else
     {
@@ -665,6 +684,8 @@ bool8 SweetScentWildEncounter(void)
     headerId = GetCurrentMapWildMonHeaderId();
     if (headerId == 0xFFFF)
     {
+        //TABULA_RASA: This is about the BattleFrontier and cannot happen
+        /*
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_RANDOM_ROOM3)
         {
             headerId = GetBattlePikeWildMonHeaderId();
@@ -685,6 +706,7 @@ bool8 SweetScentWildEncounter(void)
             BattleSetup_StartWildBattle();
             return TRUE;
         }
+        */
     }
     else
     {

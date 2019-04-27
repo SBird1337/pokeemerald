@@ -467,13 +467,15 @@ static u16 GetRegionMapSectionId(u8 mapGroup, u8 mapNum)
 
 static bool8 MapHasMon(const struct WildPokemonHeader *info, u16 species)
 {
+    //TABULA_RASA: This MAPSEC cannot be reached
+    /*
     if (GetRegionMapSectionId(info->mapGroup, info->mapNum) == MAPSEC_ALTERING_CAVE_2)
     {
         sPokedexAreaScreen->unk6E2++;
         if (sPokedexAreaScreen->unk6E2 != sPokedexAreaScreen->unk6E4 + 1)
             return FALSE;
     }
-
+    */
     if (MonListHasMon(info->landMonsInfo, species, 12))
         return TRUE;
     if (MonListHasMon(info->waterMonsInfo, species, 5))
