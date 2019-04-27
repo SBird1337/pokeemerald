@@ -144,6 +144,8 @@ void RoamerMove(void)
         if (!roamer->active)
             return;
 
+        //TABULA_RASA: The array is currently empty
+        /*
         while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
         {
             if (sRoamerLocation[MAP_NUM] == sRoamerLocations[locSet][0])
@@ -160,6 +162,7 @@ void RoamerMove(void)
             }
             locSet++;
         }
+        */
     }
 }
 

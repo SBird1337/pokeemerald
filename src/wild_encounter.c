@@ -487,8 +487,9 @@ static bool8 DoWildEncounterRateTest(u32 encounterRate, bool8 ignoreAbility)
 
         //TABULA_RASA: This is about encounter rates on BattlePyramid
         /*if (ability == ABILITY_STENCH && gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_EMPTY_SQUARE)
-            encounterRate = encounterRate * 3 / 4;*/
-        else if (ability == ABILITY_STENCH)
+            encounterRate = encounterRate * 3 / 4;
+        else if (ability == ABILITY_STENCH)*/
+        if (ability == ABILITY_STENCH)
             encounterRate /= 2;
         else if (ability == ABILITY_ILLUMINATE)
             encounterRate *= 2;
