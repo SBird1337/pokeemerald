@@ -124,19 +124,19 @@ static const u8 sBattleTransitionTable_Trainer[][2] =
     {B_TRANSITION_SWIRL,           B_TRANSITION_RIPPLE},        // Water
 };
 
-static const u8 sUnknown_0854FE98[] =
+static const u8 sBattleTransitionTable_BattleFrontier[] =
 {
     B_TRANSITION_29, B_TRANSITION_30, B_TRANSITION_31, B_TRANSITION_32,
     B_TRANSITION_34, B_TRANSITION_35, B_TRANSITION_36, B_TRANSITION_37,
     B_TRANSITION_38, B_TRANSITION_39, B_TRANSITION_40, B_TRANSITION_41
 };
 
-static const u8 sUnknown_0854FEA4[] =
+static const u8 sBattleTransitionTable_BattlePyramid[] =
 {
     B_TRANSITION_31, B_TRANSITION_32, B_TRANSITION_33
 };
 
-static const u8 sUnknown_0854FEA7[] =
+static const u8 sBattleTransitionTable_BattleDome[] =
 {
     B_TRANSITION_29, B_TRANSITION_31, B_TRANSITION_32, B_TRANSITION_33
 };
@@ -446,12 +446,12 @@ static void DoTrainerBattle(void)
     TryUpdateGymLeaderRematchFromTrainer();
 }
 
-static void sub_80B0828(void)
+static void DoPyramidOrHillTrainerBattle(void)
 {
     if (InBattlePyramid())
-        CreateBattleStartTask(sub_80B100C(10), 0);
+        CreateBattleStartTask(GetSpecialTrainerBattleTransition(10), 0);
     else
-        CreateBattleStartTask(sub_80B100C(11), 0);
+        CreateBattleStartTask(GetSpecialTrainerBattleTransition(11), 0);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
@@ -839,7 +839,7 @@ static u8 GetTrainerBattleTransition(void)
         return sBattleTransitionTable_Trainer[transitionType][1];
 }
 
-u8 sub_80B100C(s32 arg0)
+u8 GetSpecialTrainerBattleTransition(s32 arg0)
 {
     u16 var;
     u8 enemyLevel = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL);
@@ -854,13 +854,13 @@ u8 sub_80B100C(s32 arg0)
         case 13:
             return B_TRANSITION_POKEBALLS_TRAIL;
         case 10:
-            return sUnknown_0854FEA4[Random() % ARRAY_COUNT(sUnknown_0854FEA4)];
+            return sBattleTransitionTable_BattlePyramid[Random() % ARRAY_COUNT(sBattleTransitionTable_BattlePyramid)];
         case 3:
-            return sUnknown_0854FEA7[Random() % ARRAY_COUNT(sUnknown_0854FEA7)];
+            return sBattleTransitionTable_BattleDome[Random() % ARRAY_COUNT(sBattleTransitionTable_BattleDome)];
         }
 
         if (VarGet(VAR_FRONTIER_BATTLE_MODE) != FRONTIER_MODE_LINK_MULTIS)
-            return sUnknown_0854FE98[Random() % ARRAY_COUNT(sUnknown_0854FE98)];
+            return sBattleTransitionTable_BattleFrontier[Random() % ARRAY_COUNT(sBattleTransitionTable_BattleFrontier)];
     }
     else
     {
@@ -871,19 +871,19 @@ u8 sub_80B100C(s32 arg0)
         case 13:
             return B_TRANSITION_BIG_POKEBALL;
         case 10:
-            return sUnknown_0854FEA4[Random() % ARRAY_COUNT(sUnknown_0854FEA4)];
+            return sBattleTransitionTable_BattlePyramid[Random() % ARRAY_COUNT(sBattleTransitionTable_BattlePyramid)];
         case 3:
-            return sUnknown_0854FEA7[Random() % ARRAY_COUNT(sUnknown_0854FEA7)];
+            return sBattleTransitionTable_BattleDome[Random() % ARRAY_COUNT(sBattleTransitionTable_BattleDome)];
         }
 
         if (VarGet(VAR_FRONTIER_BATTLE_MODE) != FRONTIER_MODE_LINK_MULTIS)
-            return sUnknown_0854FE98[Random() % ARRAY_COUNT(sUnknown_0854FE98)];
+            return sBattleTransitionTable_BattleFrontier[Random() % ARRAY_COUNT(sBattleTransitionTable_BattleFrontier)];
     }
 
     var = gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum * 2 + 0]
         + gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum * 2 + 1];
 
-    return sUnknown_0854FE98[var % ARRAY_COUNT(sUnknown_0854FE98)];
+    return sBattleTransitionTable_BattleFrontier[var % ARRAY_COUNT(sBattleTransitionTable_BattleFrontier)];
 }
 
 void ChooseStarter(void)
@@ -1293,7 +1293,7 @@ void BattleSetup_StartTrainerBattle(void)
     gMain.savedCallback = CB2_EndTrainerBattle;
 
     if (InBattlePyramid() || InTrainerHillChallenge())
-        sub_80B0828();
+        DoPyramidOrHillTrainerBattle();
     else
         DoTrainerBattle();
 
