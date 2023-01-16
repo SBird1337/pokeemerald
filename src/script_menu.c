@@ -250,7 +250,7 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     gMultiuseListMenuTemplate.moveCursorFunc = MultichoiceDynamic_MoveCursor;
 
     taskId = CreateTask(Task_HandleScrollingMultichoiceInput, 80);
-    gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);
+    gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, cursorPos);
     gTasks[taskId].data[1] = ignoreBPress;
     gTasks[taskId].data[2] = windowId;
     gTasks[taskId].data[5] = argc;
