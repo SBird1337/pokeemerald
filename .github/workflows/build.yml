@@ -2,14 +2,12 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
-      - upcoming
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: devkitpro/devkitarm
     env:
       GAME_VERSION: EMERALD
       GAME_REVISION: 0
@@ -27,7 +25,7 @@ jobs:
           repository: pret/agbcc
 
       - name: Install binutils
-        run: sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi libelf-dev
+        run: sudo apt install libelf-dev
         # build-essential, git, and libpng-dev are already installed
         # gcc-arm-none-eabi is only needed for the modern build
         # as an alternative to dkP
