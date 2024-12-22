@@ -11,6 +11,10 @@ static void Callback_Dummy_M(int reqCommandId, int error, void (*callbackM)());
 static void Callback_Dummy_S(u16 reqCommandId, void (*callbackS)(u16));
 static void Callback_Dummy_ID(void (*callbackId)(void));
 
+#pragma GCC optimize ("no-toplevel-reorder")
+#pragma GCC target ("arm")
+#pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
+
 void IntrSIO32(void)
 {
     if (gSTWIStatus->state == 10)
