@@ -172,6 +172,40 @@ static const u32 sYkTemplate[2*TANS_TABLE_SIZE] = {
     [127] = SET_TABLE_ENTRY(0, 127 - 64, 0),
 };
 
+ARM_FUNC __attribute__((section(".iwram.code"))) __attribute__((noinline)) __attribute__((optimize("-O3"))) void SmolFrameUncomp_Naive(const char *src, void *dst, u32 frameIndex)
+{
+    const char *origSrc = src;
+    u32 frameSizeBytes = *src++ * 32;
+    u32 nFrames = *src++;
+    u32 offsetCompound = (*(src + 2 * frameIndex + 1) << 8) | *(src + 2 * frameIndex);
+    bool32 fillMode = (offsetCompound & 1) > 0;
+    u32 offset = offsetCompound >> 1;
+    src = origSrc + nFrames * 2 + 2 + offset;
+    u32 decompressedLen = 0;
+    while (decompressedLen < frameSizeBytes)
+    {
+        u32 n = *src++;
+        if (fillMode)
+        {
+            CycleCountStart();
+            memset(dst, 0, n);
+            u32 cycles = CycleCountEnd();
+            DebugPrintf("memset: %d", cycles);
+        }
+        else
+        {
+            CycleCountStart();
+            memcpy(dst, src, n);
+            u32 cycles = CycleCountEnd();
+            DebugPrintf("memcpy: %d", cycles);
+            src += n;
+        }
+        decompressedLen += n;
+        dst += n;
+        fillMode = !fillMode;
+    }
+}
+
 // Checks if `ptr` is likely LZ77 data
 // Checks word-alignment, min/max size, and header byte
 // Returns uncompressed size if true, 0 otherwise

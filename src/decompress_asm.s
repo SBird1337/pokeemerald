@@ -19,6 +19,78 @@ FastUnsafeCopy32:
     pop     {r4-r10}
     bx    lr
     
+.global SmolFrameUncomp
+
+	// header (see src):
+	// struct RLFrameHeader {
+	//   u16 n_frames: 8;
+	//   u16 frame_size_tiles: 8;
+	//   struct Offset {
+	//     u16 offset: 15;
+	//     u16 start_fill_mode: 1; 
+	//   }[n_frames];
+	// }
+	// followed by n_frames compressed data frames
+	// they are built as follows:
+	// [n] <data>
+	// where n signifies the amount of 0 bytes to fill in fill mode
+	// or the amount of bytes to copy from the compressed stream in copy mode
+	// after a fill mode [n] follows a copy mode [n]
+	// after a copy mode [n] follow <n> bytes of data, as well as a fill mode [n]
+	// if the stream is fully decompressed an additional [n] is omitted,
+	// the decompressor has to terminate then.
+
+	@ r0 = dst (word aligned)
+	@ r1 = src (base, word aligned)
+	@ r2 = frame_index
+
+SmolFrameUncomp:
+	push {r4-r5}
+	ldrh r3, [r1] // frame size in tiles and number of frames
+//	and r4, r3, #0xFF // n_frames
+	and r5, r3, #0xFF00
+	lsr r5, r5, #3 // frame_size_bytes
+
+	lsl r2, r2, #1 // index of offset compound - 2
+	
+// opt: we can omit this by reframing the offset to index from 2 and using incrementing ldrh above
+	add r2, #2
+
+	ldrh r2, [r1, r2] // offset compound
+	lsrs r2, #1 // offset in r6, C high iff start_fill
+
+	add r1, r2, r1
+	add r5, r5, r0 // r5 = dst + frame_size_bytes
+	mov r3, #0
+	bcc branch_copy
+
+branch_fill:
+	ldrb r2, [r1], #1
+
+branch_fill_loop:
+    subs r2, r2, #1
+	strbge r3, [r0], #1
+	bgt branch_fill_loop
+	cmp r0, r5
+	beq decompress_done
+
+branch_copy:
+	ldrb r2, [r1], #1
+
+branch_copy_loop:
+	subs r2, r2, #1
+	ldrbge r4, [r1], #1
+	strbge r4, [r0], #1
+	bgt branch_copy_loop
+	cmp r0, r5
+	bne branch_fill
+
+decompress_done:
+	pop {r4-r5}
+	bx lr
+
+.pool
+
     
 @ Credit to:  luckytyphlosion as it's his implementation
     
