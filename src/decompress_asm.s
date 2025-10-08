@@ -40,56 +40,64 @@ FastUnsafeCopy32:
 	// if the stream is fully decompressed an additional [n] is omitted,
 	// the decompressor has to terminate then.
 
-	@ r0 = dst (word aligned)
-	@ r1 = src (base, word aligned)
+	@ r0 = src (word aligned)
+	@ r1 = dst (word aligned)
 	@ r2 = frame_index
 
 SmolFrameUncomp:
-	push {r4-r5}
-	ldrh r3, [r1] // frame size in tiles and number of frames
-//	and r4, r3, #0xFF // n_frames
+	push {r4-r7}
+	ldrh r3, [r0] // frame size in tiles and number of frames
 	and r5, r3, #0xFF00
 	lsr r5, r5, #3 // frame_size_bytes
-
 	lsl r2, r2, #1 // index of offset compound - 2
 	
 // opt: we can omit this by reframing the offset to index from 2 and using incrementing ldrh above
 	add r2, #2
 
-	ldrh r2, [r1, r2] // offset compound
-	lsrs r2, #1 // offset in r6, C high iff start_fill
+	ldrh r2, [r0, r2] // offset compound
 
-	add r1, r2, r1
-	add r5, r5, r0 // r5 = dst + frame_size_bytes
-	mov r3, #0
-	bcc branch_copy
+	add r0, r2, r0
+	add r5, r5, r1 // r5 = dst + frame_size_bytes
 
-branch_fill:
-	ldrb r2, [r1], #1
+	mov r6, #0 // for filling
+	mov r7, #0x4000000
+	orr r7, #0xD4 // dma3_sad
+	mov r3, #(0x8000 << 16)
+
+rlz_loop:
+	ldrh r4, [r0], #2 // first 8 byte: number of fill hwords, second 8 byte: number of copy hwords
+
+// fill stage
+// (can probably be faster by improving the store loop,
+// but alignment is tricky and there's a bunch of small fill compounds)
+	and r2, r4, #0xFF
 
 branch_fill_loop:
     subs r2, r2, #1
-	strbge r3, [r0], #1
+	strhge r6, [r1], #2
 	bgt branch_fill_loop
-	cmp r0, r5
-	beq decompress_done
 
-branch_copy:
-	ldrb r2, [r1], #1
-
-branch_copy_loop:
-	subs r2, r2, #1
-	ldrbge r4, [r1], #1
-	strbge r4, [r0], #1
-	bgt branch_copy_loop
-	cmp r0, r5
-	bne branch_fill
+// copy stage (can probably be faster by using DMA)
+	lsrs r2, r4, #8
+	beq skip_dma
+	orr r4, r2, r3
+	stmia r7, {r0, r1, r4} // dma
+	//sub r7, #12
+	lsl r2, #1
+	add r0, r2
+	add r1, r2
+//branch_copy_loop:
+//	subs r2, r2, #1
+//	ldrhge r4, [r0], #2
+//	strhge r4, [r1], #2
+//	bgt branch_copy_loop
+skip_dma:
+	cmp r1, r5
+	bne rlz_loop
 
 decompress_done:
-	pop {r4-r5}
+	pop {r4-r7}
 	bx lr
-
-.pool
 
     
 @ Credit to:  luckytyphlosion as it's his implementation
